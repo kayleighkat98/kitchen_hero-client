@@ -1,0 +1,12 @@
+.controls li{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 20px;
+    list-style: none;
+}
+.head {
+    display: flex;
+    padding-right: 12px;
+    ;
+}
