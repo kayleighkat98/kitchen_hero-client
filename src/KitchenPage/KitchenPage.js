@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './KitchenPage.css';
 import Header from '../Header/Header';
-import Help from '../Help/Help';
+// import Help from '../Help/Help';
 import SignOut from '../SignOut/SignOut';
 import {Link} from 'react-router-dom';
 
