@@ -8,7 +8,7 @@ class Help extends Component {
         return(
             <div className='container'>
                <h4>Need help?</h4>
-               <div class='hidden'>
+               <div className='hidden'>
                    <h3>Add</h3>
                    <p>Click 'Add' to add ingredients to your ePantry.</p>
                    <h3>View</h3>

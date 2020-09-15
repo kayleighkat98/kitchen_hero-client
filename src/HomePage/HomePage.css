@@ -1,0 +1,16 @@
+html {
+    background-color: rgb(241, 60, 60);
+   
+}
+.centerText{
+    padding-top: 10%;
+    text-align: center;
+    padding-bottom: 10%;
+}
+.home-controls a, .home-controls a:hover, .home-controls a:focus, .home-controls a:active {
+    
+    color: white;
+}
+.sign-out{
+    position: relative;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import SignOut from '../SignOut';
-import Header from '../Header';
+import SignOut from '../SignOut/SignOut';
+import Header from '../Header/Header';
 
 class AddIngredientPage extends Component {
 
@@ -9,10 +9,13 @@ class AddIngredientPage extends Component {
     render() {
         return(
             <div className='container'>
+                <Link to='/kitchen'>Back to Kitchen</Link>
                 <div className='head'>
                     <Header/>
-                    <SignOut/>  
+
+                    
                 </div>
+                
                 <form className='add-ingredient'>
                    <ul className='wrapper'>
                         <li className='form-row'>
@@ -23,7 +26,7 @@ class AddIngredientPage extends Component {
                         </li>
                         <li className='form-row'>
                             <label>
-                                Ammount of item:
+                                Amount of item:
                                 <input type='Text' name='ingredient-quantity'/>
                             </label>
                         </li>
@@ -49,7 +52,6 @@ class AddIngredientPage extends Component {
                                 <option value='months'>Months</option>
                             </select>
                         </li>
-
                         <li className='form-row'>
                             {/* <input type='submit' value='submit'/> */}
                             <Link to='/epantry'>
@@ -58,7 +60,7 @@ class AddIngredientPage extends Component {
                         </li>
                     </ul>
                 </form>
-
+                <SignOut/>
             </div>
         );
     }

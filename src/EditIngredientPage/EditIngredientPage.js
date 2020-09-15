@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import SignOut from '../SignOut';
-import Header from '../Header';
+import SignOut from '../SignOut/SignOut';
+import Header from '../Header/Header';
 
 class EditIngredientPage extends Component {
 

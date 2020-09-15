@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import './ExpiredPage.css';
-import Header from '../Header';
-import SignOut from '../SignOut';
+import Header from '../Header/Header';
+import SignOut from '../SignOut/SignOut';
 
 class ExpiredPage extends Component {
 
@@ -12,15 +12,18 @@ class ExpiredPage extends Component {
         return(
             <div className='container'>
                <div className='head'>
-                   <Header/>
-                   <SignOut/>
+                   <Link to='/kitchen'>Back to Kitchen</Link>
+                   
+
+                   
                </div>
-               <Link to='/kitchen'>Back to Kitchen</Link>
-               <ul className='Expired-list'>
-                    <li>
+               <Header/>
+               <ul className='Expired-list ingredient-list'>
+                    <li className='ingredient'>
                         <div className='head'>
-                            <button>Edit</button>
-                            <button>Delete</button>
+                        <Link to='/edit-ingredient/:ingredient_id'><button className='edit-button'>Edit</button></Link>
+                            
+                            <button className='delete-button'>Delete</button>
                         </div>
 
                         <div className='center'>
@@ -30,10 +33,10 @@ class ExpiredPage extends Component {
                         </div>
 
                     </li>
-                    <li>
+                    <li className='ingredient'>
                         <div className='head'>
-                            <button>Edit</button>
-                            <button>Delete</button>
+                            <button className='edit-button'>Edit</button>
+                            <button className='delete-button'>Delete</button>
                         </div>
 
                         <div className='center'>
@@ -43,10 +46,10 @@ class ExpiredPage extends Component {
                         </div>
 
                     </li>
-                    <li>
+                    <li className='ingredient'>
                         <div className='head'>
-                            <button>Edit</button>
-                            <button>Delete</button>
+                            <button className='edit-button'>Edit</button>
+                            <button className='delete-button'>Delete</button>
                         </div>
 
                         <div className='center'>
@@ -57,6 +60,7 @@ class ExpiredPage extends Component {
 
                     </li>
                </ul>
+               <SignOut/>
             </div>
         );
     }

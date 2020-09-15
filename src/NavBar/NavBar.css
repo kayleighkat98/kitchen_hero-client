@@ -1,6 +1,7 @@
 .nav{
     display: flexbox;
     flex-direction: row;
+    text-align: center;
 }
 
 .nav ul { 
@@ -9,4 +10,9 @@
     margin: 0; 
     padding: 0; 
     display: flex; 
-    }
+
+}
+.nav a, .nav a:hover, .nav a:focus, .nav a:active {
+    
+    color: white;
+}
