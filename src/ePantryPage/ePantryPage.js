@@ -67,7 +67,7 @@ class ePantryPage extends Component {
                             </div>
 
                             <div className='center'>
-                                <h4>{ingredient.ingredient}</h4>
+                                <h4>{ingredient.name}</h4>
                                 <p>Quantity:{ingredient.quantity} {ingredient.quantity_type}</p>
                             </div>
 
