@@ -21,8 +21,7 @@ class ExpiredPage extends Component {
                <ul className='Expired-list ingredient-list'>
                     <li className='ingredient'>
                         <div className='head'>
-                        <Link to='/edit-ingredient/:ingredient_id'><button className='edit-button'>Edit</button></Link>
-                            
+                            <Link to='/edit-ingredient/:ingredient_id'><button className='edit-button'>Edit</button></Link> 
                             <button className='delete-button'>Delete</button>
                         </div>
 
