@@ -3,62 +3,53 @@ import {Link} from 'react-router-dom';
 import './ExpiredPage.css';
 import Header from '../Header/Header';
 import SignOut from '../SignOut/SignOut';
+import AddIngredientPage from '../AddIngredientPage/AddIngredientPage';
+import ApiContext from '../ApiContext';
 
 class ExpiredPage extends Component {
+    
+    static defaultProps = {
+        match: {
+          params: {}
+        }
+
+      }
+    static contextType = ApiContext
 
 
 
     render() {
+        const { ingredients=[] } = this.context
+
         return(
             <div className='container'>
-               <div className='head'>
-                   <Link to='/kitchen'>Back to Kitchen</Link>
-                   
+                <>
+ 
+                    <Link to='/kitchen'>Back to Kitchen</Link>
 
-                   
-               </div>
-               <Header/>
-               <ul className='Expired-list ingredient-list'>
-                    <li className='ingredient'>
-                        <div className='head'>
-                            <Link to='/edit-ingredient/:ingredient_id'><button className='edit-button'>Edit</button></Link> 
-                            <button className='delete-button'>Delete</button>
-                        </div>
 
-                        <div className='center'>
-                            <h4>Title</h4>
-                            <p>Quantity:</p>
-                            <p>Expiration Date:</p>
-                        </div>
+                    <Header/>
+                </>
+                
+                <ul className='Expired-list ingredient-list'>
+                    {ingredients.map(ingredient =>
+                            
+                        <li className='ingredient' key= {ingredient.ingredient_id}>
 
-                    </li>
-                    <li className='ingredient'>
-                        <div className='head'>
-                            <button className='edit-button'>Edit</button>
-                            <button className='delete-button'>Delete</button>
-                        </div>
+                            <div className='head'>
+                                <Link to={`/edit-ingredient/${ingredient.ingredient_id}`}><button className='edit-button'>Edit</button></Link>
+                                <button className='delete-button'>Delete</button>
+                            </div>
 
-                        <div className='center'>
-                            <h4>Title</h4>
-                            <p>Quantity:</p>
-                            <p>Expiration Date:</p>
-                        </div>
+                            <div className='center'>
+                                <h4>{ingredient.name}</h4>
+                                <p>Quantity:{ingredient.quantity} {ingredient.quantity_type}</p>
+                            </div>
 
-                    </li>
-                    <li className='ingredient'>
-                        <div className='head'>
-                            <button className='edit-button'>Edit</button>
-                            <button className='delete-button'>Delete</button>
-                        </div>
+                        </li>    
+                    )}      
 
-                        <div className='center'>
-                            <h4>Title</h4>
-                            <p>Quantity:</p>
-                            <p>Expiration Date:</p>
-                        </div>
-
-                    </li>
-               </ul>
+                </ul>
                <SignOut/>
             </div>
         );

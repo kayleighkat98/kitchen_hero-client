@@ -46,15 +46,16 @@ class ePantryPage extends Component {
 
         return(
             <div className='epantry-page'>
+                <>
 
-                <Link to='/kitchen'>Back to Kitchen</Link>
+                    <Link to='/kitchen'>Back to Kitchen</Link>
 
-                <div className='head'>
-                   <Header/>
-                </div>
 
-                <Link to='/add-ingredient'><button>ADD MORE</button></Link>
+                    <Header/>
 
+
+                    <Link to='/add-ingredient'><button>ADD MORE</button></Link>
+                </>
 
                 <ul className='epantry-list'>
                     {ingredients.map(ingredient =>
@@ -62,7 +63,7 @@ class ePantryPage extends Component {
                         <li className='ingredient' key= {ingredient.ingredient_id}>
 
                             <div className='head'>
-                                <Link to='/edit-ingredient/:ingredient_id'><button className='edit-button'>Edit</button></Link>
+                                <Link to={`/edit-ingredient/${ingredient.ingredient_id}`}><button className='edit-button'>Edit</button></Link>
                                 <button className='delete-button'>Delete</button>
                             </div>
 
