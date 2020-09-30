@@ -23,7 +23,7 @@ class EditIngredientPage extends Component {
                         </li>
                         <li className='form-row'>
                             <label>
-                                Ammount of item:
+                                Amount of item:
                                 <input type='Text' name='ingredient-quantity'/>
                             </label>
                         </li>

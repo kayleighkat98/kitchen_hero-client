@@ -72,21 +72,8 @@ class AddIngredientPage extends Component {
         e.preventDefault();
         this.setState({ isError: false, errorMsg: "" });
 
-        // fetch(`${config.API_ENDPOINT}/ingredients`)
-
-    // .then(response => response.json())
-    // .then((ingredients) => {
-    //   console.log('ingredients', ingredients)
-    //   this.setState({ingredients });
-    // })
-    // .catch((error) => {
-    //   console.error(error.message );
-    // });
         if (this.validateIngredient()) {
 
-
-
-    
           fetch(`${config.API_ENDPOINT}/ingredients`, {
             method: "POST",
             headers: {

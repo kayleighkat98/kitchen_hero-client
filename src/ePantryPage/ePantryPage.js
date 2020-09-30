@@ -4,7 +4,9 @@ import './ePantryPage.css';
 import Header from '../Header/Header';
 import SignOut from '../SignOut/SignOut';
 import ApiContext from '../ApiContext';
-import config from "../config";
+
+import Ingredient from "../Ingredient/Ingredient"
+
 
 class ePantryPage extends Component {
 
@@ -16,29 +18,10 @@ class ePantryPage extends Component {
       }
     static contextType = ApiContext
 
-    handleClickDelete = e => {
-        e.preventDefault()
-        const ingredient_id = this.props.id
-        
-        fetch(`${config.API_ENDPOINT}/ingredients/${ingredient_id}`, {
-          method: 'DELETE',
-          headers: {
-            'content-type': 'application/json'
-          },
-        })
-        .then(res => {
-            if (!res.ok)
-            return res.json().then(e => Promise.reject(e))
-            return res.json()
-        })
-        .then(() => {
-            this.context.deleteIngredient(ingredient_id)
-            this.props.onDeleteIngredient(ingredient_id)
-        })
-        .catch(error => {
-            console.error({ error })
-        })
+    handleDeleteIngredient = ingredient_id => {
+        this.props.history.push(`/epantry`)
     }
+
 
 
     render() {
@@ -59,21 +42,22 @@ class ePantryPage extends Component {
 
                 <ul className='epantry-list'>
                     {ingredients.map(ingredient =>
-                    
+                        
                         <li className='ingredient' key= {ingredient.ingredient_id}>
 
-                            <div className='head'>
-                                <Link to={`/edit-ingredient/${ingredient.ingredient_id}`}><button className='edit-button'>Edit</button></Link>
-                                <button className='delete-button'>Delete</button>
-                            </div>
-
-                            <div className='center'>
-                                <h4>{ingredient.name}</h4>
-                                <p>Quantity:{ingredient.quantity} {ingredient.quantity_type}</p>
-                            </div>
+                            <Ingredient
+                                ingredient_id={ingredient.ingredient_id} 
+                                name = {ingredient.name}
+                                quantity = {ingredient.quantity}
+                                quantityType = {ingredient.quantityType}
+                                onDeleteIngredient = {this.handleDeleteIngredient}
+                            />
+                            
+                        
 
                         </li>    
                     )}      
+
                 </ul>
                 <SignOut/>
             </div>
