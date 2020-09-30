@@ -6,6 +6,7 @@ import ApiContext from '../ApiContext';
 import config from '../config';
 import SignOut from '../SignOut/SignOut';
 import Header from '../Header/Header';
+import IngredientForm from "../IngredientForm/IngredientForm";
 
 
 class AddIngredientPage extends Component {
@@ -61,7 +62,7 @@ class AddIngredientPage extends Component {
         if (!amountType){
             this.setState({
                 isError: true,
-                errorMsg: "Measurement type for amount is required.",
+                errorMsg: "ement type for amount is required.",
             })
         }
         return true;
@@ -71,8 +72,20 @@ class AddIngredientPage extends Component {
         e.preventDefault();
         this.setState({ isError: false, errorMsg: "" });
 
-    
+        // fetch(`${config.API_ENDPOINT}/ingredients`)
+
+    // .then(response => response.json())
+    // .then((ingredients) => {
+    //   console.log('ingredients', ingredients)
+    //   this.setState({ingredients });
+    // })
+    // .catch((error) => {
+    //   console.error(error.message );
+    // });
         if (this.validateIngredient()) {
+
+
+
     
           fetch(`${config.API_ENDPOINT}/ingredients`, {
             method: "POST",
@@ -87,7 +100,6 @@ class AddIngredientPage extends Component {
             }),
           })
           .then((res) => {
-            if (!res.ok) return res.json().then((e) => Promise.reject(e));
             return res.json();
           })
           .then((response) => {
@@ -103,6 +115,7 @@ class AddIngredientPage extends Component {
             })
           });
         }
+        console.log(this.state)
     };
     
     updateName = (name) => {
@@ -118,32 +131,48 @@ class AddIngredientPage extends Component {
     };
 
     render() {
+
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />;
+          }
+          const { ingredients = [] } = this.context;
+          const { className, ...otherProps } = this.props;
+          this.history = otherProps.history;
+          console.log('123',ingredients)
         return(
             <div className='container'>
                 <Link to='/kitchen'>Back to Kitchen</Link>
                 <div className='head'>
                     <Header/>
                 </div>
-                
-                <form className='add-ingredient'>
-                   <ul className='wrapper'>
+                <IngredientForm className='add-ingredient' onSubmit={(e) => this.submitIngredient(e)}>
+                    <ul className='wrapper'>
                         {/* name */}
                         <li className='form-row'>
                             <label>
                                 Ingredient Name:
-                                <input type='text' name='ingredient-name'/>
+                                <input 
+                                    type='text' 
+                                    name='ingredient-name'
+                                    onChange={(e) => this.updateName(e.target.value)}
+                                />
                             </label>
                         </li>
-                        {/* ammount */}
+                        {/* amount */}
                         <li className='form-row'>
                             <label>
                                 Amount of item:
-                                <input type='Text' name='ingredient-quantity'/>
+                                <input 
+                                    type='Text' 
+                                    name='ingredient-quantity'
+                                    onChange={(e) => this.updateAmount(e.target.value)}
+                                />
                             </label>
                         </li>
-                        {/* ammount type */}
+                        {/* amount type */}
                         <li className='form-row'>
-                            <select>
+                            <select onChange={(e) => this.updateAmountType(e.target.value)}>
+                                
                                 <option value='pounds'>Pounds</option>
                                 <option value='cups'>Cups</option>
                                 <option value='gallons'>Gallons</option>
@@ -169,12 +198,11 @@ class AddIngredientPage extends Component {
                         {/*submit*/}
                         <li className='form-row'>
                             {/* <input type='submit' value='submit'/> */}
-                            <Link to='/epantry'>
-                                Add Ingredient
-                            </Link>
+                            <input type="submit" name="ingredientSubmit" />
                         </li>
                     </ul>
-                </form>
+                </IngredientForm>
+
                 <SignOut/>
             </div>
         );
