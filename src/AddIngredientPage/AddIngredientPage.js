@@ -25,9 +25,6 @@ class AddIngredientPage extends Component {
           expireDate: {
             value: "",
           },
-          dateType: {
-            value: "",
-          },
           isError: false,
           errorMsg: "",
           redirect: null,
@@ -53,17 +50,19 @@ class AddIngredientPage extends Component {
           });
           return false;
         }
-        if (!amount){
+        else if (!amount){
             this.setState({
                 isError: true,
-                errorMsg: "Amount is required.",
-            })
+                errorMsg: "Amount is required as a number.",
+            });
+            return false;
         }
-        if (!amountType){
+        else if (!amountType || amountType === 'Select Unit Type'){
             this.setState({
                 isError: true,
-                errorMsg: "ement type for amount is required.",
-            })
+                errorMsg: "Unit type of amount is required.",
+            });
+            return false;
         }
         return true;
     };
@@ -83,6 +82,7 @@ class AddIngredientPage extends Component {
               name: `${this.state.name.value}`,
               quantity: `${this.state.amount.value}`,
               quantity_type: `${this.state.amountType.value}`,
+              expiration_date: `${this.state.expireDate}`
 
             }),
           })
@@ -115,6 +115,10 @@ class AddIngredientPage extends Component {
 
     updateAmountType= (amountType) => {
         this.setState({ amountType: { value: amountType } });
+    };
+
+    updateExpiration= (expireDate) => {
+        this.setState({ expireDate: { value: expireDate } });
     };
 
     render() {
@@ -150,16 +154,20 @@ class AddIngredientPage extends Component {
                             <label>
                                 Amount of item:
                                 <input 
-                                    type='Text' 
+                                    type='number' 
+                                    min = '1'
+                                    max = '100000'
                                     name='ingredient-quantity'
                                     onChange={(e) => this.updateAmount(e.target.value)}
+                                    required                                
                                 />
                             </label>
                         </li>
                         {/* amount type */}
                         <li className='form-row'>
+
                             <select onChange={(e) => this.updateAmountType(e.target.value)}>
-                                
+                                <option>Select Unit Type</option>
                                 <option value='pounds'>Pounds</option>
                                 <option value='cups'>Cups</option>
                                 <option value='gallons'>Gallons</option>
@@ -169,18 +177,17 @@ class AddIngredientPage extends Component {
                         </li>
                         {/* expiration */}
                         <li className='form-row'>
-                            <label>
-                                Item expiration:
-                                <input type='text' name='expiration-date'/>
+                            <label >Expiration date:
+                                <input 
+                                    type="date" 
+                                    id="expiration" 
+                                    name="expire-date"
+
+                                    min="2020-01-01" 
+                                    max="3020-01-01"
+                                    onChange={(e) => this.updateExpiration(e.target.value)}
+                                />   
                             </label>
-                        </li>
-                        {/*expiration type*/}
-                        <li className='form-row'>
-                            <select>
-                                <option value='weeks'>Weeks</option>
-                                <option value='days'>Days</option>
-                                <option value='months'>Months</option>
-                            </select>
                         </li>
                         {/*submit*/}
                         <li className='form-row'>
@@ -191,6 +198,7 @@ class AddIngredientPage extends Component {
                 </IngredientForm>
 
                 <SignOut/>
+                {this.state.isError && <p>{this.state.errorMsg}</p>}
             </div>
         );
     }
