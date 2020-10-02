@@ -19,7 +19,7 @@ class ExpiredPage extends Component {
 
 
     render() {
-        const { ingredients=[] } = this.context
+        const { expired=[] } = this.context
 
         return(
             <div className='container'>
@@ -32,7 +32,7 @@ class ExpiredPage extends Component {
                 </>
                 
                 <ul className='Expired-list ingredient-list'>
-                    {ingredients.map(ingredient =>
+                    {expired.map(ingredient =>
                             
                         <li className='ingredient' key= {ingredient.ingredient_id}>
 

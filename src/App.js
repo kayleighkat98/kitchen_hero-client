@@ -17,6 +17,7 @@ class App extends Component {
     super(props)
     this.state = {
       ingredients: [], 
+      expired: [],
     };
   }
 
@@ -27,6 +28,17 @@ class App extends Component {
     .then((ingredients) => {
       console.log('ingredients', ingredients)
       this.setState({ingredients });
+    })
+    .catch((error) => {
+      console.error(error.message );
+    });
+
+    fetch(`${config.API_ENDPOINT}/ingredients/expired`)
+
+    .then(response => response.json())
+    .then((expired) => {
+      console.log('expired', expired)
+      this.setState({ expired });
     })
     .catch((error) => {
       console.error(error.message );
@@ -98,6 +110,7 @@ class App extends Component {
   
   render() {
     const value = {
+      expired: this.state.expired,
       ingredients: this.state.ingredients,
       addIngredient: this.handleAddIngredient,
       deleteIngredient: this.handleDeleteingredient,
