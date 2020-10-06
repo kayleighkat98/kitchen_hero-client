@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import config from "../config";
+import config from "../../config";
 import {Link} from 'react-router-dom';
-import ApiContext from '../ApiContext';
+import ApiContext from '../../ApiContext';
 
 class Ingredient extends Component {
     

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import Header from '../Header/Header';
-import NavBar from '../NavBar/NavBar';
+import Header from '../../components/Header/Header';
+import NavBar from '../../components/NavBar/NavBar';
 
 import './HomePage.css';
-import GetStarted from '../GetStarted/GetStarted';
+import GetStarted from '../../components/GetStarted/GetStarted';
 class HomePage extends Component {
 
 

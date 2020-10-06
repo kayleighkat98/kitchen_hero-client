@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Login.css';
-import Header from '../Header/Header';
-import NavBar from '../NavBar/NavBar';
+//import './Login.css';
+import Header from '../../components/Header/Header';
+import NavBar from '../../components/NavBar/NavBar';
 import {Link} from 'react-router-dom';
 
 class SignUpPage extends Component {

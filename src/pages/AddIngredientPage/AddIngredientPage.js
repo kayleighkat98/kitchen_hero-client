@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import ApiContext from '../ApiContext';
-import config from '../config';
-import SignOut from '../SignOut/SignOut';
-import Header from '../Header/Header';
-import IngredientForm from "../IngredientForm/IngredientForm";
+import ApiContext from '../../ApiContext';
+import config from '../../config';
+import SignOut from '../../components/SignOut/SignOut';
+import Header from '../../components/Header/Header';
+import IngredientForm from "../../components/IngredientForm/IngredientForm";
 
 
 class AddIngredientPage extends Component {

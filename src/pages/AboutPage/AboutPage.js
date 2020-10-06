@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './AboutPage.css';
-import Header from '../Header/Header';
-import Navbar from '../NavBar/NavBar';
-import GetStarted from '../GetStarted/GetStarted';
+import Header from '../../components/Header/Header';
+import Navbar from '../../components/NavBar/NavBar';
+import GetStarted from '../../components/GetStarted/GetStarted';
 
 class AboutPage extends Component {
 

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import './ExpiredPage.css';
-import Header from '../Header/Header';
-import SignOut from '../SignOut/SignOut';
+import Header from '../../components/Header/Header';
+import SignOut from '../../components/SignOut/SignOut';
 
-import ApiContext from '../ApiContext';
+import ApiContext from '../../ApiContext';
 
 class ExpiredPage extends Component {
     

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import Header from '../Header/Header';
-import NavBar from '../NavBar/NavBar';
+import Header from '../../components/Header/Header';
+import NavBar from '../../components/NavBar/NavBar';
 
 
 class SignInPage extends Component {

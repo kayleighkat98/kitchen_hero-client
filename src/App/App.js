@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import {Route} from 'react-router-dom';
-import HomePage from './HomePage/HomePage';
-import AboutPage from './AboutPage/AboutPage';
-import KitchenPage from './KitchenPage/KitchenPage';
-import SignUpPage from './Login/SignUpPage';
-import SignInPage from './Login/SignInPage';
-import AddIngredientPage from './AddIngredientPage/AddIngredientPage';
-import ePantryPage from './ePantryPage/ePantryPage';
-import EditIngredientPage from './EditIngredientPage/EditIngredientPage';
-import ExpiredPage from './ExpiredPage/ExpiredPage';
-import config from "./config";
-import ApiContext from "./ApiContext";
+import HomePage from '../pages/HomePage/HomePage';
+import AboutPage from '../pages/AboutPage/AboutPage';
+import KitchenPage from '../pages/KitchenPage/KitchenPage';
+import SignUpPage from '../pages/SignUpPage/SignUpPage';
+import SignInPage from '../pages/SignInPage/SignInPage';
+import AddIngredientPage from '../pages/AddIngredientPage/AddIngredientPage';
+import ePantryPage from '../pages/ePantryPage/ePantryPage';
+import EditIngredientPage from '../pages/EditIngredientPage/EditIngredientPage';
+import ExpiredPage from '../pages/ExpiredPage/ExpiredPage';
+import config from "../config";
+import ApiContext from "../ApiContext";
 class App extends Component {
 
   constructor(props) {
