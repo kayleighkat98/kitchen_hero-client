@@ -82,7 +82,7 @@ class AddIngredientPage extends Component {
               name: `${this.state.name.value}`,
               quantity: `${this.state.amount.value}`,
               quantity_type: `${this.state.amountType.value}`,
-              expiration_date: `${this.state.expireDate}`
+              expiration_date: `${this.state.expireDate.value}`
 
             }),
           })
@@ -182,7 +182,6 @@ class AddIngredientPage extends Component {
                                     type="date" 
                                     id="expiration" 
                                     name="expire-date"
-
                                     min="2020-01-01" 
                                     max="3020-01-01"
                                     onChange={(e) => this.updateExpiration(e.target.value)}

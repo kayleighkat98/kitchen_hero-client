@@ -1,11 +1,11 @@
-import App from './App.js';
+import GetStarted from './GetStarted.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-describe("App", () => {
+describe("GetStarted", () => {
   it("form renders without crashing", () => {
     const div = document.createElement("div");
-    ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, div);
+    ReactDOM.render(<BrowserRouter><GetStarted /></BrowserRouter>, div);
   });
 });
