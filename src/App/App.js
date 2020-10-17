@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Route} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom'
 import HomePage from '../pages/HomePage/HomePage';
 import AboutPage from '../pages/AboutPage/AboutPage';
 import KitchenPage from '../pages/KitchenPage/KitchenPage';
@@ -9,119 +9,68 @@ import AddIngredientPage from '../pages/AddIngredientPage/AddIngredientPage';
 import ePantryPage from '../pages/ePantryPage/ePantryPage';
 import EditIngredientPage from '../pages/EditIngredientPage/EditIngredientPage';
 import ExpiredPage from '../pages/ExpiredPage/ExpiredPage';
+import PrivateRoute from '../utils/PrivateRoute';
+import PublicOnlyRoute from '../utils/PublicOnlyRoute';
+import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 import config from "../config";
 import ApiContext from "../ApiContext";
 class App extends Component {
+  state = { hasError: false }
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      ingredients: [], 
-      expired: [],
-    };
+  static getDerivedStateFromError(error) {
+    console.error(error)
+    return { hasError: true }
   }
 
-  componentDidMount() {
-    fetch(`${config.API_ENDPOINT}/ingredients`)
-
-    .then(response => response.json())
-    .then((ingredients) => {
-      console.log('ingredients', ingredients)
-      this.setState({ingredients });
-    })
-    .catch((error) => {
-      console.error(error.message );
-    });
-
-    fetch(`${config.API_ENDPOINT}/ingredients/expired`)
-
-    .then(response => response.json())
-    .then((expired) => {
-      console.log('expired', expired)
-      this.setState({ expired });
-    })
-    .catch((error) => {
-      console.error(error.message );
-    });
-  }
-
-
-  renderRoutes() {
-    return (
-      <>
-        <Route
-          exact path = '/'
-          component= {HomePage}
-        />
-        <Route
-          path = '/about'
-          component = {AboutPage}
-        />
-        <Route
-          path = '/sign-up'
-          component = {SignUpPage}
-        />
-        <Route
-          path = '/login'
-          component = {SignInPage}
-        />
-        <Route
-          path = '/kitchen'
-          component = {KitchenPage}
-        />
-        <Route
-          path = '/epantry'
-          component = {ePantryPage}
-        />
-        <Route
-          path = '/expired'
-          component = {ExpiredPage}
-        />
-        <Route
-          path = '/add-ingredient'
-          component = {AddIngredientPage}
-        />
-        <Route
-          path = '/edit-ingredient/:ingredient_id'
-          component = {EditIngredientPage}
-        />
-      </>
-    )
-  }
-
-  handleDeleteingredient = (ingredient_id) => {
-    this.setState({
-      ingredients: this.state.ingredients.filter((ingredient) => ingredient.ingredient_id !== ingredient_id),
-    });
-  };
-  
-  handleAddIngredient = () => {
-    fetch(`${config.API_ENDPOINT}/ingredients`)
-    .then((res) => res.json())
-    .then((ingredients) => {
-      this.setState({
-        ingredients,
-      });
-    })
-    .catch((e) => {
-      console.log("Error loading ingredient data");
-    });
-  };
-  
   render() {
-    const value = {
-      expired: this.state.expired,
-      ingredients: this.state.ingredients,
-      addIngredient: this.handleAddIngredient,
-      deleteIngredient: this.handleDeleteingredient,
-    };
-    return(
-      <ApiContext.Provider value={value}>
-        <main className='App'>
-          {this.renderRoutes()}
+    const { hasError } = this.state
+    return (
+      <div className='App'>
+        <main>
+          {hasError && (
+            <p>There was an error! Oh no!</p>
+          )}
+          <Switch>
+            <Route
+              exact path = '/'
+              component= {HomePage}
+            />
+            <Route
+              path = '/about'
+              component = {AboutPage}
+            />
+            <PublicOnlyRoute
+              path = '/sign-up'
+              component = {SignUpPage}
+            />
+            <PublicOnlyRoute
+              path = '/login'
+              component = {SignInPage}
+            />
+            <PrivateRoute
+              path = '/kitchen'
+              component = {KitchenPage}
+            />
+            <PrivateRoute
+              path = '/epantry'
+              component = {ePantryPage}
+            />
+            <PrivateRoute
+              path = '/expired'
+              component = {ExpiredPage}
+            />
+            <PrivateRoute
+              path = '/add-ingredient'
+              component = {AddIngredientPage}
+            />
+            <PrivateRoute
+              path = '/edit-ingredient/:ingredient_id'
+              component = {EditIngredientPage}
+            />
+          </Switch>
         </main>
-      </ApiContext.Provider>
-    );
+      </div>
+    )
   }
 }
 
