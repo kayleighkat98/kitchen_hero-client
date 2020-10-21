@@ -1,18 +1,9 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import SignOut from '../../components/SignOut/SignOut';
-import Header from '../../components/Header/Header';
-
 class EditIngredientPage extends Component {
-
-
     render() {
         return(
             <div className='container'>
-                <div className='head'>
-                    <Header/>
-                    <SignOut/>  
-                </div>
                 <form className='add-ingredient'>
                    <ul className='wrapper'>
                         <li className='form-row'>
