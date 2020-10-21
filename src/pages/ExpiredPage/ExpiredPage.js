@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 import './ExpiredPage.css';
-import Header from '../../components/Header/Header';
-import SignOut from '../../components/SignOut/SignOut';
-import ApiContext from '../../ApiContext';
+import IngredientContext from '../../contexts/IngredientContext';
 
 import Ingredient from '../../components/Ingredient/Ingredient';
 class ExpiredPage extends Component {
@@ -13,7 +10,7 @@ class ExpiredPage extends Component {
           params: {}
         }
       }
-    static contextType = ApiContext
+    static contextType = IngredientContext
     handleDeleteIngredient = ingredient_id => {
         this.props.history.push(`/expired`)
     }
@@ -22,11 +19,6 @@ class ExpiredPage extends Component {
         console.log('expired' ,expired)
         return(
             <div className='container'>
-                <>
-                    <Link to='/kitchen'>Back to Kitchen</Link>
-                    <Header/>
-                    <Link to='/add-ingredient'><button>ADD MORE</button></Link>
-                </>  
                 <ul className='Expired-list ingredient-list'>
                     {expired.map(ingredient =>                
                         <li className='ingredient' key= {ingredient.ingredient_id}>
@@ -40,7 +32,6 @@ class ExpiredPage extends Component {
                         </li>    
                     )}      
                 </ul>
-               <SignOut/>
             </div>
         );
     }
