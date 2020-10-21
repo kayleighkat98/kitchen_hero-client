@@ -1,23 +1,11 @@
 import React, { Component } from 'react'
 import './AboutPage.css';
-import Header from '../../components/Header/Header';
-import Navbar from '../../components/NavBar/NavBar';
 import GetStarted from '../../components/GetStarted/GetStarted';
 
 class AboutPage extends Component {
-
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-            
-    //     };
-    // }
-
     render() {
         return(
             <div className='container'>
-               <Navbar/>
-               <Header/>
                <div className='paragraphs'>
                   <p>Kitchen-Hero was created to make the process of meal planning more budget friendly and easier than ever.</p> 
                   
