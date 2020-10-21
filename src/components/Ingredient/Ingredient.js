@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import config from "../../config";
 import {Link} from 'react-router-dom';
-import ApiContext from '../../ApiContext';
+import IngredientContext from '../../contexts/IngredientContext';
 
 class Ingredient extends Component {
     
@@ -9,7 +9,7 @@ class Ingredient extends Component {
         onDeleteIngredient: () => {},
         ingredient_id: () => {},
     }
-    static contextType = ApiContext;
+    static contextType = IngredientContext;
 
     handleClickDelete = e => {
         e.preventDefault()
