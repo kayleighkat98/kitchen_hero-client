@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import ApiContext from '../../ApiContext';
+import IngredientContext from '../../contexts/IngredientContext';
 import config from '../../config';
-import SignOut from '../../components/SignOut/SignOut';
-import Header from '../../components/Header/Header';
 import IngredientForm from "../../components/IngredientForm/IngredientForm";
 
 
@@ -30,7 +28,7 @@ class AddIngredientPage extends Component {
           redirect: null,
         };
     }
-    static contextType = ApiContext;
+    static contextType = IngredientContext;
 
     static defaultProps = {
       viewtype: false,
@@ -133,9 +131,6 @@ class AddIngredientPage extends Component {
         return(
             <div className='container'>
                 <Link to='/kitchen'>Back to Kitchen</Link>
-                <div className='head'>
-                    <Header/>
-                </div>
                 <IngredientForm className='add-ingredient' onSubmit={(e) => this.submitIngredient(e)}>
                     <ul className='wrapper'>
                         {/* name */}
@@ -195,8 +190,6 @@ class AddIngredientPage extends Component {
                         </li>
                     </ul>
                 </IngredientForm>
-
-                <SignOut/>
                 {this.state.isError && <p>{this.state.errorMsg}</p>}
             </div>
         );
