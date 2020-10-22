@@ -32,7 +32,6 @@ export class IngredientProvider extends Component {
               'authorization': `Bearer ${TokenService.getAuthToken()}`,
             },
         })
-
         .then(response => response.json())
         .then((ingredients) => {
           console.log('ingredients', ingredients)
@@ -43,7 +42,11 @@ export class IngredientProvider extends Component {
         });
     }
     fetchExpired = () => {
-        fetch(`${config.API_ENDPOINT}/ingredients/expired`)
+        fetch(`${config.API_ENDPOINT}/ingredients/expired`,{
+          headers:{
+            'authorization': `Bearer ${TokenService.getAuthToken()}`,
+          },
+        })
 
         .then(response => response.json())
         .then((expired) => {
@@ -75,7 +78,11 @@ export class IngredientProvider extends Component {
         });
     };
     handleAddIngredient = () => {
-        fetch(`${config.API_ENDPOINT}/ingredients`)
+        fetch(`${config.API_ENDPOINT}/ingredients`,{
+          headers:{
+            'authorization': `Bearer ${TokenService.getAuthToken()}`,
+          },
+        })
         .then((res) => res.json())
         .then((ingredients) => {
           this.setState({
