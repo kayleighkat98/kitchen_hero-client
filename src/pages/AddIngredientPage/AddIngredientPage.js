@@ -121,7 +121,6 @@ class AddIngredientPage extends Component {
     };
 
     render() {
-      console.log(this.props.user.user.id)
         if (this.state.redirect) {
             return <Redirect to={this.state.redirect} />;
           }
