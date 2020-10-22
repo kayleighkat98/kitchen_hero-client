@@ -1,27 +1,19 @@
 import React, { Component } from 'react'
 import './KitchenPage.css';
-import Header from '../../components/Header/Header';
-// import Help from '../Help/Help';
-import SignOut from '../../components/SignOut/SignOut';
 import {Link} from 'react-router-dom';
-
+import IngredientContext from '../../contexts/IngredientContext'
 
 class KitchenPage extends Component {
-
+    static contextType = IngredientContext
     render() {
+        console.log(this.context)
         return(
             <div className='container'>
-               <div className='head'>
-                <Header/>
-                {/* <h2>ePantry</h2>
-                <Help/>  */}
-               </div>
                <ul className='kitchen-controls centerText' >
                    <li><Link to='/add-ingredient'className='kitchen-button centerText'>Add</Link></li>
                    <li><Link to='/epantry' className='kitchen-button centerText'>View</Link></li>
                    <li><Link to= '/expired' className='kitchen-button centerText'>Expired</Link></li>
                </ul>  
-               <SignOut/>
             </div>
         );
     }

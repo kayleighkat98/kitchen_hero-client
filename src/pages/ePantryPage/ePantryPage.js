@@ -1,28 +1,21 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import './ePantryPage.css';
-import Header from '../../components/Header/Header';
-import SignOut from '../../components/SignOut/SignOut';
-import ApiContext from '../../ApiContext';
-
+import IngredientContext from '../../contexts/IngredientContext';
 import Ingredient from "../../components/Ingredient/Ingredient"
 
 
 class ePantryPage extends Component {
-
     static defaultProps = {
         match: {
           params: {}
         }
-
       }
-    static contextType = ApiContext
+    static contextType = IngredientContext
 
     handleDeleteIngredient = ingredient_id => {
         this.props.history.push(`/epantry`)
     }
-
-
 
     render() {
         const { ingredients=[] } = this.context
@@ -30,13 +23,6 @@ class ePantryPage extends Component {
         return(
             <div className='epantry-page'>
                 <>
-
-                    <Link to='/kitchen'>Back to Kitchen</Link>
-
-
-                    <Header/>
-
-
                     <Link to='/add-ingredient'><button>ADD MORE</button></Link>
                 </>
 
@@ -59,7 +45,6 @@ class ePantryPage extends Component {
                     )}      
 
                 </ul>
-                <SignOut/>
             </div>
         );
     }
