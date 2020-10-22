@@ -10,6 +10,7 @@ class Header extends Component {
   handleLogoutClick = () => {
     this.context.processLogout()
   }
+
   renderLogoutLink() {
     return (
       <div>
@@ -45,9 +46,10 @@ class Header extends Component {
     return (
       <header className="header-container">
         <h1 className="header center">
-          <Link to='/'>
-          Kitchen-Hero
-          </Link>
+        {TokenService.hasAuthToken()
+            ?  <Link to='/kitchen'>Kitchen-Hero</Link>
+            : <Link to='/'>Kitchen-Hero</Link>}
+
         </h1>
         <div className='nav'>
           {TokenService.hasAuthToken()

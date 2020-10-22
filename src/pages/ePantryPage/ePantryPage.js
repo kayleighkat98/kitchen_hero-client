@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import './ePantryPage.css';
 import IngredientContext from '../../contexts/IngredientContext';
-import Ingredient from "../../components/Ingredient/Ingredient"
+import Ingredient from "../../components/Ingredient/Ingredient";
+import Button from '../../components/Button/Button'
 
 
 class ePantryPage extends Component {
@@ -16,21 +17,24 @@ class ePantryPage extends Component {
     handleDeleteIngredient = ingredient_id => {
         this.props.history.push(`/epantry`)
     }
-
-    render() {
+    handleIngredientRender = () => {
+        if (this.context.ingredients === null){
+            return(
+                <>
+                    <Link to='/add-ingredient'><Button>ADD MORE</Button></Link>
+                </>
+            )
+        }
         const { ingredients=[] } = this.context
-
         return(
             <div className='epantry-page'>
                 <>
-                    <Link to='/add-ingredient'><button>ADD MORE</button></Link>
+                    <Link to='/add-ingredient'><Button>ADD MORE</Button></Link>
                 </>
-
                 <ul className='epantry-list'>
                     {ingredients.map(ingredient =>
-                        
                         <li className='ingredient' key= {ingredient.ingredient_id}>
-
+    
                             <Ingredient
                                 ingredient_id={ingredient.ingredient_id} 
                                 name = {ingredient.name}
@@ -38,15 +42,20 @@ class ePantryPage extends Component {
                                 quantityType = {ingredient.quantityType}
                                 onDeleteIngredient = {this.handleDeleteIngredient}
                             />
-                            
-                        
-
                         </li>    
                     )}      
-
+    
                 </ul>
             </div>
         );
+        
+    }
+    render() {
+        return(
+            <>{this.handleIngredientRender()}</>
+        )
+
+
     }
 }
 

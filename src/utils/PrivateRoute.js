@@ -14,7 +14,7 @@ export default function PrivateRoute({ component, ...props }) {
           {userContext => <IngredientContext.Consumer>
             {ingredientContext =>
               !!userContext.user.id
-                ? <Component {...componentProps} />
+                ? <Component {...componentProps} user={userContext} ingredients={ingredientContext}/>
                 : (
                   <Redirect
                     to={{

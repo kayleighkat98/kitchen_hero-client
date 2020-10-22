@@ -4,7 +4,6 @@ import IngredientContext from '../../contexts/IngredientContext';
 
 import Ingredient from '../../components/Ingredient/Ingredient';
 class ExpiredPage extends Component {
-    
     static defaultProps = {
         match: {
           params: {}
@@ -14,7 +13,14 @@ class ExpiredPage extends Component {
     handleDeleteIngredient = ingredient_id => {
         this.props.history.push(`/expired`)
     }
-    render() {
+    handleExpiredRender = () => {
+        if (this.context.expired === null || this.context.expired.length < 1){
+            return (
+                <>
+                    <h4>None of your ingredients are expired. Hurray!</h4>
+                </>
+            )
+        }
         const { expired=[] } = this.context
         console.log('expired' ,expired)
         return(
@@ -34,6 +40,11 @@ class ExpiredPage extends Component {
                 </ul>
             </div>
         );
+    }
+    render() {
+        return (
+           <> {this.handleExpiredRender()}</>
+        )
     }
 }
 

@@ -5,8 +5,7 @@ import PropTypes from 'prop-types';
 import IngredientContext from '../../contexts/IngredientContext';
 import config from '../../config';
 import IngredientForm from "../../components/IngredientForm/IngredientForm";
-
-
+import TokenService from '../../services/token-service';
 class AddIngredientPage extends Component {
     constructor(props) {
         super(props);
@@ -75,12 +74,14 @@ class AddIngredientPage extends Component {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
+              'authorization': `Bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify({
               name: `${this.state.name.value}`,
+              user_id: `${this.props.user.user.id}`,
               quantity: `${this.state.amount.value}`,
               quantity_type: `${this.state.amountType.value}`,
-              expiration_date: `${this.state.expireDate.value}`
+              expiration_date: `${this.state.expireDate.value}`,
 
             }),
           })
@@ -120,7 +121,7 @@ class AddIngredientPage extends Component {
     };
 
     render() {
-
+      console.log(this.props.user.user.id)
         if (this.state.redirect) {
             return <Redirect to={this.state.redirect} />;
           }
