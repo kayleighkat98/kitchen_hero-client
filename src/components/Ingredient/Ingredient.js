@@ -33,7 +33,7 @@ class Ingredient extends Component {
     render() {
         const {ingredient_id, name, quantity, quantityType, expirationDate} = this.props;
         return(
-            <>
+            <div className='ingredient-container'>
                 <div className='head'>
                     <Link to={`/edit-ingredient/${ingredient_id}`}><button className='edit-button'>Edit</button></Link>
                     <button 
@@ -50,7 +50,7 @@ class Ingredient extends Component {
                     <p>{quantity} {quantityType}</p>
                     <p>Expiration Date: {expirationDate} </p>
                 </div>
-            </>
+            </div>
         );
     };
 };

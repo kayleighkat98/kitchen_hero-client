@@ -1,6 +1,5 @@
 
-.kitchen-button
- {
+.kitchen-button{
     background-color: rgb(241, 105, 60);
     display: flex;
     flex-direction: column;
@@ -12,9 +11,11 @@
     font-family: 'Playfair Display SC', serif;
     margin-right: 10%;
     margin-left: 10%;
-
   }
   .kitchen-controls li a, .kitchen-controls li a:hover, .kitchen-controls li a:focus, .kitchen-controls li a:active {
     text-decoration: none;
     color: white;
+}
+.kitchen-controls{
+  list-style-type: none;
 }
