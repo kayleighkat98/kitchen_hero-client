@@ -24,6 +24,8 @@ class LoginForm extends Component {
       password.value = ''
       this.context.processLogin(res.authToken)
       this.props.onLoginSuccess()
+    }).then(()=>{
+      window.location.reload(true);
     }).catch(res => {
       this.setState({ error: res.error })
     });
