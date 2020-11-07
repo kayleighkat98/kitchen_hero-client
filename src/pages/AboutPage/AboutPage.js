@@ -7,15 +7,14 @@ class AboutPage extends Component {
         return(
             <div className='container'>
                 <div className='paragraphs'>
-                    <p>Kitchen-Hero was created to make the process of meal planning more budget friendly and easier than ever.</p> 
-                    
-                    <p>Have you ever had food go bad because you didn't use it in time? How about recipes you want to try, but didn’t want to go through the effort of buying every ingredient needed EVERY TIME?</p>
-                    
-                    <p>Kitchen-Hero allows you to keep track of the food that you buy/bought along with your favorite recipes and when you summon hero, Kitchen-Hero will generate a meal plan and shopping list tailored to your tastes and pantry!</p>
+                    <p>Let's face it. We don't always remember what we have in our fridge. This means that sometimes we have to face terribly rotten food when deep cleaning.</p>
+                    <p>Wouldn't it be nice to have an easy reference for what has expired in your pantry and fridge?</p><p>Introducing Kitchen-Hero.</p>
+                    <p>Log in to add the ingredients you have and if/when they expire. If you are a returning user, take a look to see if any of your items have expired and throw them away before they get moldy!</p>
                 </div>
                 <div className='controls'>
                     <GetStarted/>
                 </div>
+                <p>Demo Username: guest</p><p> Demo Password: Password!1</p>
             </div>
         );
     };
