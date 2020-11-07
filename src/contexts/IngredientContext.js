@@ -34,7 +34,6 @@ export class IngredientProvider extends Component {
         })
         .then(response => response.json())
         .then((ingredients) => {
-          console.log('ingredients', ingredients)
           this.setState({ingredients });
         })
         .catch((error) => {
@@ -50,7 +49,6 @@ export class IngredientProvider extends Component {
 
         .then(response => response.json())
         .then((expired) => {
-          console.log('expired', expired)
           this.setState({ expired });
         })
         .catch((error) => {

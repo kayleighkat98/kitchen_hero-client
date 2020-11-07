@@ -101,7 +101,6 @@ class AddIngredientPage extends Component {
             })
           });
         }
-        console.log(this.state)
     };
     
     updateName = (name) => {
@@ -127,7 +126,6 @@ class AddIngredientPage extends Component {
           const { ingredients = [] } = this.context;
           const { className, ...otherProps } = this.props;
           this.history = otherProps.history;
-          console.log('123',ingredients)
         return(
             <div className='container'>
                 <Link to='/kitchen'>Back to Kitchen</Link>

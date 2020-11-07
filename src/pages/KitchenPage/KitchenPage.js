@@ -6,7 +6,6 @@ import IngredientContext from '../../contexts/IngredientContext'
 class KitchenPage extends Component {
     static contextType = IngredientContext
     render() {
-        console.log(this.context)
         return(
             <div className='container'>
                <ul className='kitchen-controls centerText' >

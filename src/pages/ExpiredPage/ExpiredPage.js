@@ -22,7 +22,6 @@ class ExpiredPage extends Component {
             )
         }
         const { expired=[] } = this.context
-        console.log('expired' ,expired)
         return(
             <div className='container'>
                 <ul className='Expired-list ingredient-list'>
