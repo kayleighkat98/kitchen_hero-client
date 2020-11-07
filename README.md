@@ -16,6 +16,14 @@ ROUTES:(for each path, add to the end of the api url)
         '/api/ingredients/:id'
 ## Screenshot(s)
 ![home](images/screenshots/home.png)
+![about](images/screenshots/about.png)
+![register](images/screenshots/register.png)
+![login](images/screenshots/login.png)
+![kitchen](images/screenshots/kitchen.png)
+![new](images/screenshots/new.png)
+![pantry](images/screenshots/pantry.png)
+![expired](images/screenshots/expired.png)
+
 ## Summary
 This is the client used by my app Kitchen-Hero. While logged in, add details about the items you have in your pantry and you can use the information later when cleaning your pantry by navigiting to the '/ingredient/expired' route.
 ## Technology
