@@ -52,7 +52,6 @@ class ePantryPage extends Component {
     render() {
         return(
             <div>
-                <Link to='/add-ingredient'><Button>ADD MORE</Button></Link>
                 {this.handleIngredientRender()}
             </div>
         );

@@ -15,6 +15,7 @@ ROUTES:(for each path, add to the end of the api url)
     one ingredient {GET, DELETE}
         '/api/ingredients/:id'
 ## Screenshot(s)
+![home](https://kayleighkat98.github.com/images/screenshots/home.png)
 ## Summary
 This is the client used by my app Kitchen-Hero. While logged in, add details about the items you have in your pantry and you can use the information later when cleaning your pantry by navigiting to the '/ingredient/expired' route.
 ## Technology

@@ -35,7 +35,7 @@ class Ingredient extends Component {
         return(
             <div className='ingredient-container'>
                 <div className='head'>
-                    <Link to={`/edit-ingredient/${ingredient_id}`}><button className='edit-button'>Edit</button></Link>
+                    <button className='edit-button'>{name}</button>
                     <button 
                         className='delete-button'
                         type='button'
