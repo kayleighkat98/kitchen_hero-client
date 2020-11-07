@@ -20,6 +20,10 @@ class Header extends Component {
             Logout
           </Link>
           {' '}
+          <Link to='/about' className='nav-item'>About</Link>
+          {' '}
+          <Link to='/kitchen' className='nav-item'>Kitchen</Link>
+          {' '}
           <Link to='/add-ingredient' className='nav-item'>Add</Link>
           {' '}
           <Link to='/expired' className='nav-item'>Expired</Link>
