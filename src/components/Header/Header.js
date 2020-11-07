@@ -20,10 +20,11 @@ class Header extends Component {
             Logout
           </Link>
           {' '}
-          <Link to='/about'>About</Link>
-          <span className='nav-item'>
-            {this.context.user.name}
-          </span>
+          <Link to='/add-ingredient'>Add</Link>
+          {' '}
+          <Link to='/expired'>Expired</Link>
+          {' '}
+          <Link to='/epantry'>Pantry</Link>
         </nav>
       </div>
     );
