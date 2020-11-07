@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LoginForm from '../../components/LoginForm/LoginForm'
+import LoginForm from '../../components/LoginForm/LoginForm';
 
 class SignInPage extends Component {
     static defaultProps = {
@@ -7,13 +7,13 @@ class SignInPage extends Component {
         history: {
           push: () => { },
         },
-      }
+      };
     
       handleLoginSuccess = () => {
-        const { location, history } = this.props
-        const destination = (location.state || {}).from || '/kitchen'
-        history.push(destination)
-      }
+        const { location, history } = this.props;
+        const destination = (location.state || {}).from || '/kitchen';
+        history.push(destination);
+      };
     
     render() {
          return(
@@ -21,7 +21,7 @@ class SignInPage extends Component {
                <LoginForm onLoginSuccess={this.handleLoginSuccess}/>
             </div>
         );
-    }
-}
+    };
+};
 
-export default SignInPage
+export default SignInPage;

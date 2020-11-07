@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import HomePage from '../pages/HomePage/HomePage';
 import AboutPage from '../pages/AboutPage/AboutPage';
 import KitchenPage from '../pages/KitchenPage/KitchenPage';
@@ -11,19 +11,16 @@ import EditIngredientPage from '../pages/EditIngredientPage/EditIngredientPage';
 import ExpiredPage from '../pages/ExpiredPage/ExpiredPage';
 import PrivateRoute from '../utils/PrivateRoute';
 import PublicOnlyRoute from '../utils/PublicOnlyRoute';
-import Header from '../components/Header/Header'
+import Header from '../components/Header/Header';
 import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
-
 class App extends Component {
-  state = { hasError: false }
-
+  state = { hasError: false };
   static getDerivedStateFromError(error) {
-    console.error(error)
-    return { hasError: true }
-  }
-
+    console.error(error);
+    return { hasError: true };
+  };
   render() {
-    const { hasError } = this.state
+    const { hasError } = this.state;
     return (
       <div className='App'>
         <Header />
@@ -74,8 +71,7 @@ class App extends Component {
           </Switch>
         </main>
       </div>
-    )
-  }
-}
-
-export default App
+    );
+  };
+};
+export default App;

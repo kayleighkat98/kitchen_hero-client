@@ -12,7 +12,7 @@ class HomePage extends Component {
                 <GetStarted/> 
             </div>
         );
-    }
-}
+    };
+};
 
-export default HomePage
+export default HomePage;

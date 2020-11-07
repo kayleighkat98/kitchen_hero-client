@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import './KitchenPage.css';
 import {Link} from 'react-router-dom';
-import IngredientContext from '../../contexts/IngredientContext'
+import IngredientContext from '../../contexts/IngredientContext';
 
 class KitchenPage extends Component {
-    static contextType = IngredientContext
+    static contextType = IngredientContext;
     render() {
         return(
             <div className='container'>
@@ -15,7 +15,7 @@ class KitchenPage extends Component {
                </ul>  
             </div>
         );
-    }
-}
+    };
+};
 
-export default KitchenPage
+export default KitchenPage;

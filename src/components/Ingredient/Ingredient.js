@@ -1,38 +1,30 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import config from "../../config";
 import {Link} from 'react-router-dom';
 import IngredientContext from '../../contexts/IngredientContext';
-
 class Ingredient extends Component {
-    
     static defaultProps ={
         onDeleteIngredient: () => {},
         ingredient_id: () => {},
-    }
+    };
     static contextType = IngredientContext;
-
     handleClickDelete = e => {
-        e.preventDefault()
-        const ingredient_id = this.props.ingredient_id
-        
+        e.preventDefault();
+        const ingredient_id = this.props.ingredient_id;
         fetch(`${config.API_ENDPOINT}/ingredients/${ingredient_id}`, {
           method: 'DELETE',
           headers: {
             'content-type': 'application/json'
           },
-        })
-        .then(res => {
+        }).then(res => {
             return res.json()
-        })
-        .then(() => {
+        }).then(() => {
             this.context.deleteIngredient(ingredient_id)
             this.props.onDeleteIngredient(ingredient_id)
-        })
-        .catch(error => {
+        }).catch(error => {
             console.error({ error })
-        })
-    }
-
+        });
+    };
     render() {
         const {ingredient_id, name, quantity, quantity_type} = this.props;
         return(
@@ -54,7 +46,6 @@ class Ingredient extends Component {
                 </div>
             </>
         );
-    }
-}
-
-export default Ingredient
+    };
+};
+export default Ingredient;

@@ -7,19 +7,19 @@ class RegistrationPage extends Component {
         history: {
           push: () => {},
         },
-    }
+    };
     
     handleRegistrationSuccess = () => {
-    const { history } = this.props
+    const { history } = this.props;
     history.push('/kitchen')
-    }
+    };
     render() {
         return(
             <div className='container'>
                <RegistrationForm onRegistrationSuccess={this.handleRegistrationSuccess}/>
             </div>
         );
-    }
-}
+    };
+};
 
-export default RegistrationPage
+export default RegistrationPage;

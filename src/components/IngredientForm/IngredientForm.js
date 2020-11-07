@@ -1,7 +1,4 @@
-
-
 import React from "react";
-
 function IngredientForm(props) {
   const { className, ...otherProps } = props;
   return (
@@ -11,6 +8,5 @@ function IngredientForm(props) {
     {...otherProps}
     />
   );
-}
-
+};
 export default IngredientForm;

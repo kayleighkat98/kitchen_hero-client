@@ -3,8 +3,6 @@ import {Link} from 'react-router-dom';
 import './GetStarted.css';
 
 class GetStarted extends Component {
-
-
     render() {
         return(
             <div className='home-controls centerText'>
@@ -15,7 +13,6 @@ class GetStarted extends Component {
                 </Link>
             </div>
         );
-    }
-}
-
-export default GetStarted
+    };
+};
+export default GetStarted;

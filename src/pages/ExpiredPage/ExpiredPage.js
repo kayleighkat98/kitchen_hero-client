@@ -8,20 +8,20 @@ class ExpiredPage extends Component {
         match: {
           params: {}
         }
-      }
-    static contextType = IngredientContext
+      };
+    static contextType = IngredientContext;
     handleDeleteIngredient = ingredient_id => {
-        this.props.history.push(`/expired`)
-    }
+        this.props.history.push(`/expired`);
+    };
     handleExpiredRender = () => {
         if (this.context.expired === null || this.context.expired.length < 1){
             return (
                 <>
                     <h4>None of your ingredients are expired. Hurray!</h4>
                 </>
-            )
-        }
-        const { expired=[] } = this.context
+            );
+        };
+        const { expired=[] } = this.context;
         return(
             <div className='container'>
                 <ul className='Expired-list ingredient-list'>
@@ -35,16 +35,16 @@ class ExpiredPage extends Component {
                                 onDeleteIngredient = {this.handleDeleteIngredient}
                             />
                         </li>    
-                    )}      
+                    )};   
                 </ul>
             </div>
         );
-    }
+    };
     render() {
         return (
            <> {this.handleExpiredRender()}</>
-        )
-    }
-}
+        );
+    };
+};
 
-export default ExpiredPage
+export default ExpiredPage;

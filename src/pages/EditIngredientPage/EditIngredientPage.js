@@ -40,7 +40,6 @@ class EditIngredientPage extends Component {
                                 <option value='months'>Months</option>
                             </select>
                         </li>
-
                         <li className='form-row'>
                             {/* <input type='submit' value='submit'/> */}
                             <Link to='/epantry'>Submit</Link>
@@ -50,7 +49,7 @@ class EditIngredientPage extends Component {
 
             </div>
         );
-    }
-}
+    };
+};
 
-export default EditIngredientPage
+export default EditIngredientPage;
