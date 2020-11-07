@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import config from "../../config";
 import {Link} from 'react-router-dom';
+import TokenService from '../../services/token-service';
 import IngredientContext from '../../contexts/IngredientContext';
 class Ingredient extends Component {
     static defaultProps ={
@@ -14,13 +15,16 @@ class Ingredient extends Component {
         fetch(`${config.API_ENDPOINT}/ingredients/${ingredient_id}`, {
           method: 'DELETE',
           headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            'authorization': `Bearer ${TokenService.getAuthToken()}`,
           },
         }).then(res => {
             return res.json();
         }).then(() => {
             this.context.deleteIngredient(ingredient_id);
             this.props.onDeleteIngredient(ingredient_id);
+        }).then(()=>{
+            window.location.reload(true);
         }).catch(error => {
             console.error({ error });
         });

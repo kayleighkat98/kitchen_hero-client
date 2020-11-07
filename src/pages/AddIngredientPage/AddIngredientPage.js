@@ -85,6 +85,8 @@ class AddIngredientPage extends Component {
         this.setState({
           redirect: "/epantry",
         });
+      }).then(()=>{
+        window.location.reload(true);
       }).catch((error) => {
         this.setState({
           isError: true,

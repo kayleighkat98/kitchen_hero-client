@@ -14,32 +14,33 @@ class ExpiredPage extends Component {
         this.props.history.push(`/expired`);
     };
     handleExpiredRender = () => {
-        if (this.context.expired === null || this.context.expired.length < 1){
+        if (this.context.expired && this.context.expired.length > 0){
+            const { expired=[] } = this.context;
+            return(
+                <div className='container'>
+                    <ul className='Expired-list ingredient-list'>
+                        {expired.map(ingredient =>                
+                            <li className='ingredient' key= {ingredient.ingredient_id}>
+                                <Ingredient
+                                    ingredient_id={ingredient.ingredient_id} 
+                                    name = {ingredient.name}
+                                    quantity = {ingredient.quantity}
+                                    quantityType = {ingredient.quantity_type}
+                                    expirationDate = {ingredient.expiration_date}
+                                    onDeleteIngredient = {this.handleDeleteIngredient}
+                                />
+                            </li>    
+                        )}
+                    </ul>
+                </div>
+            );
+        }else{
             return (
                 <>
                     <h4>None of your ingredients are expired. Hurray!</h4>
                 </>
             );
-        };
-        const { expired=[] } = this.context;
-        return(
-            <div className='container'>
-                <ul className='Expired-list ingredient-list'>
-                    {expired.map(ingredient =>                
-                        <li className='ingredient' key= {ingredient.ingredient_id}>
-                            <Ingredient
-                                ingredient_id={ingredient.ingredient_id} 
-                                name = {ingredient.name}
-                                quantity = {ingredient.quantity}
-                                quantityType = {ingredient.quantity_type}
-                                expirationDate = {ingredient.expiration_date}
-                                onDeleteIngredient = {this.handleDeleteIngredient}
-                            />
-                        </li>    
-                    )}
-                </ul>
-            </div>
-        );
+        }
     };
     render() {
         return (
