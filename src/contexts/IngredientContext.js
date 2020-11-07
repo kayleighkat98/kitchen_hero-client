@@ -53,8 +53,12 @@ export class IngredientProvider extends Component {
     });
   };
   componentDidMount() {
-    this.fetchIngredients();
-    this.fetchExpired();
+    TokenService.hasAuthToken()
+      ? this.fetchIngredients()
+      : console.log('please log in')
+      TokenService.hasAuthToken()
+      ? this.fetchExpired()
+      : console.log('Demo credentials are listed in log in place holders')
   };
   componentWillUnmount() {
     IdleService.unRegisterIdleResets();

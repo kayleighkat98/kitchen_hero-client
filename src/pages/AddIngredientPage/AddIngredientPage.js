@@ -19,7 +19,7 @@ class AddIngredientPage extends Component {
         value: "",
       },
       expirationDate: {
-        value: "",
+        value: 'None',
       },
       isError: false,
       errorMsg: "",
@@ -86,7 +86,7 @@ class AddIngredientPage extends Component {
           redirect: "/epantry",
         });
       }).then(()=>{
-        window.location.reload(true);
+       window.location.reload(true);
       }).catch((error) => {
         this.setState({
           isError: true,
