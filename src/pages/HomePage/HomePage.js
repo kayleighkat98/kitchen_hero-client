@@ -6,8 +6,8 @@ class HomePage extends Component {
     render() {
         return(
             <div className='container'>
-               <div className ='slogan centerText'>
-                   <h2>Use What You Have.<br/>Buy What You Need.</h2>
+               <div className ='slogan center'>
+                   <h2>Use What You Have.</h2><h2>Buy What You Need.</h2>
                </div>
                 <GetStarted/> 
             </div>

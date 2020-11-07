@@ -5,7 +5,7 @@ import './GetStarted.css';
 class GetStarted extends Component {
     render() {
         return(
-            <div className='home-controls centerText'>
+            <div className='home-controls center'>
                 <Link to='/register'><h3>Let's get started!</h3></Link>
                 <p>Already have an account?</p>
                 <Link to='/login'>
