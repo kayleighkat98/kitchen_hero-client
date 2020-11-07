@@ -18,7 +18,7 @@ class AddIngredientPage extends Component {
       amountType: {
         value: "",
       },
-      expireDate: {
+      expirationDate: {
         value: "",
       },
       isError: false,
@@ -38,7 +38,7 @@ class AddIngredientPage extends Component {
     const name = this.state.name.value;
     const amount = this.state.amount.value;
     const amountType = this.state.amountType.value;
-    if (!name) {
+    if (!name || name === ' ') {
       this.setState({
         isError: true,
         errorMsg: "Name is required.",
@@ -76,7 +76,7 @@ class AddIngredientPage extends Component {
           user_id: `${this.props.user.user.id}`,
           quantity: `${this.state.amount.value}`,
           quantity_type: `${this.state.amountType.value}`,
-          expiration_date: `${this.state.expireDate.value}`,
+          expiration_date: `${this.state.expirationDate.value}`,
         }),
       }).then((res) => {
         return res.json();
@@ -104,8 +104,8 @@ class AddIngredientPage extends Component {
   updateAmountType= (amountType) => {
     this.setState({ amountType: { value: amountType } });
   };
-  updateExpiration= (expireDate) => {
-    this.setState({ expireDate: { value: expireDate } });
+  updateExpiration= (expirationDate) => {
+    this.setState({ expirationDate: { value: expirationDate } });
   };
   render() {
     if (this.state.redirect) {
@@ -161,7 +161,7 @@ class AddIngredientPage extends Component {
                 <input 
                   type="date" 
                   id="expiration" 
-                  name="expire-date"
+                  name="expirationDate"
                   min="2020-01-01" 
                   max="3020-01-01"
                   onChange={(e) => this.updateExpiration(e.target.value)}
