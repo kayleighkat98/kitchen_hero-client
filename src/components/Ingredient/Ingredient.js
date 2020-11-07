@@ -26,7 +26,7 @@ class Ingredient extends Component {
         });
     };
     render() {
-        const {ingredient_id, name, quantity, quantity_type, expirationDate} = this.props;
+        const {ingredient_id, name, quantity, quantityType, expirationDate} = this.props;
         return(
             <>
                 <div className='head'>
@@ -42,8 +42,8 @@ class Ingredient extends Component {
 
                 <div className='center'>
                     <h4>{name}</h4>
-                    <p>Quantity:{quantity} {quantity_type}</p>
-                    {expirationDate}
+                    <p>{quantity} {quantityType}</p>
+                    <p>Expiration Date: {expirationDate} </p>
                 </div>
             </>
         );

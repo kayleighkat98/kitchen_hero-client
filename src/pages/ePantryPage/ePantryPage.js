@@ -39,7 +39,7 @@ class ePantryPage extends Component {
                                 ingredient_id={ingredient.ingredient_id} 
                                 name = {ingredient.name}
                                 quantity = {ingredient.quantity}
-                                quantityType = {ingredient.quantityType}
+                                quantityType = {ingredient.quantity_type}
                                 expirationDate = {ingredient.expiration_date}
                                 onDeleteIngredient = {this.handleDeleteIngredient}
                             />
