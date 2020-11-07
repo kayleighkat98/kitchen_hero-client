@@ -17,16 +17,16 @@ class Ingredient extends Component {
             'content-type': 'application/json'
           },
         }).then(res => {
-            return res.json()
+            return res.json();
         }).then(() => {
-            this.context.deleteIngredient(ingredient_id)
-            this.props.onDeleteIngredient(ingredient_id)
+            this.context.deleteIngredient(ingredient_id);
+            this.props.onDeleteIngredient(ingredient_id);
         }).catch(error => {
-            console.error({ error })
+            console.error({ error });
         });
     };
     render() {
-        const {ingredient_id, name, quantity, quantity_type} = this.props;
+        const {ingredient_id, name, quantity, quantity_type, expirationDate} = this.props;
         return(
             <>
                 <div className='head'>
@@ -43,6 +43,7 @@ class Ingredient extends Component {
                 <div className='center'>
                     <h4>{name}</h4>
                     <p>Quantity:{quantity} {quantity_type}</p>
+                    {expirationDate}
                 </div>
             </>
         );

@@ -44,7 +44,7 @@ class RegistrationForm extends Component {
         onSubmit={this.handleSubmit}
       >
         <div role='alert'>
-          {error && <p>{error}</p>};
+          {error && <p>{error}</p>}
         </div>
         <div className="form-line">
           <Label htmlFor='registration-name-input'>
@@ -82,7 +82,7 @@ class RegistrationForm extends Component {
           <Button type='submit'>
             Sign up
           </Button>
-          {' '};
+          {' '}
           <Link to='/login'>Already have an account?</Link>
         </footer>
       </form>

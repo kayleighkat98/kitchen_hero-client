@@ -46,7 +46,6 @@ class EditIngredientPage extends Component {
                         </li>
                     </ul>
                 </form>
-
             </div>
         );
     };

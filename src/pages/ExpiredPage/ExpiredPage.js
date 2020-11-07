@@ -32,10 +32,11 @@ class ExpiredPage extends Component {
                                 name = {ingredient.name}
                                 quantity = {ingredient.quantity}
                                 quantityType = {ingredient.quantityType}
+                                expirationDate = {ingredient.expiration_date}
                                 onDeleteIngredient = {this.handleDeleteIngredient}
                             />
                         </li>    
-                    )};   
+                    )}
                 </ul>
             </div>
         );

@@ -14,13 +14,13 @@ import PublicOnlyRoute from '../utils/PublicOnlyRoute';
 import Header from '../components/Header/Header';
 import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 class App extends Component {
-  state = { hasError: false };
+  state = { hasError: false }
   static getDerivedStateFromError(error) {
     console.error(error);
-    return { hasError: true };
-  };
+    return { hasError: true }
+  }
   render() {
-    const { hasError } = this.state;
+    const { hasError } = this.state
     return (
       <div className='App'>
         <Header />
@@ -71,7 +71,7 @@ class App extends Component {
           </Switch>
         </main>
       </div>
-    );
-  };
-};
+    )
+  }
+}
 export default App;

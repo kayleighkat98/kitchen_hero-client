@@ -113,7 +113,7 @@ export class UserProvider extends Component {
     };
     return (
       <UserContext.Provider value={value}>
-        {this.props.children};
+        {this.props.children}
       </UserContext.Provider>
     );
   };

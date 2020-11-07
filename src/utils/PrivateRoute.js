@@ -22,7 +22,7 @@ export default function PrivateRoute({ component, ...props }) {
                       state: { from: componentProps.location },
                     }}
                   />
-                  )
+                )
             }
           </IngredientContext.Consumer>}
         </UserContext.Consumer>

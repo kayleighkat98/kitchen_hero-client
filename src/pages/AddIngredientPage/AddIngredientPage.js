@@ -172,7 +172,7 @@ class AddIngredientPage extends Component {
             </li>
           </ul>
         </IngredientForm>
-        {this.state.isError && <p>{this.state.errorMsg}</p>};
+        {this.state.isError && <p>{this.state.errorMsg}</p>}
       </div>
     );
   };

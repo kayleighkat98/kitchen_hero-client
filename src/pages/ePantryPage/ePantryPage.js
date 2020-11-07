@@ -21,7 +21,7 @@ class ePantryPage extends Component {
         if (this.context.ingredients === null){
             return(
                 <>
-                    <Link to='/add-ingredient'><Button>ADD MORE</Button></Link>
+                    No ingredients to show, begin by adding a few!
                 </>
             );
         };
@@ -40,10 +40,11 @@ class ePantryPage extends Component {
                                 name = {ingredient.name}
                                 quantity = {ingredient.quantity}
                                 quantityType = {ingredient.quantityType}
+                                expirationDate = {ingredient.expiration_date}
                                 onDeleteIngredient = {this.handleDeleteIngredient}
                             />
                         </li>    
-                    )};
+                    )}
                 </ul>
             </div>
         );

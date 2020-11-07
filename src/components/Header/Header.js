@@ -19,10 +19,10 @@ class Header extends Component {
             to='/login'>
             Logout
           </Link>
-          {' '};
+          {' '}
           <Link to='/about'>About</Link>
           <span className='nav-item'>
-            {this.context.user.name};
+            {this.context.user.name}
           </span>
         </nav>
       </div>
@@ -32,9 +32,9 @@ class Header extends Component {
     return (
       <nav>
         <Link to='/login' className='nav-item'>Login</Link>
-        {' '};
+        {' '}
         <Link to='/register' className='nav-item'>Sign up</Link>
-        {' '};
+        {' '}
         <Link to='/about'>About</Link>
       </nav>
     );
@@ -45,15 +45,15 @@ class Header extends Component {
         <h1 className="header center">
         {TokenService.hasAuthToken()
           ? <Link to='/kitchen'>Kitchen-Hero</Link>
-          : <Link to='/'>Kitchen-Hero</Link>};
+          : <Link to='/'>Kitchen-Hero</Link>}
         </h1>
         <div className='nav'>
           {TokenService.hasAuthToken()
             ? this.renderLogoutLink()
-            : this.renderLoginLink()};
+            : this.renderLoginLink()}
         </div>
       </header>
-    );
+    )
   };
 };
 export default Header;

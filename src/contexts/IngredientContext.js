@@ -31,9 +31,9 @@ export class IngredientProvider extends Component {
       headers:{
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
       },
-    }).then(response => {
+    }).then(response => 
       response.json()
-    }).then((ingredients) => {
+    ).then((ingredients) => {
       this.setState({ingredients });
     }).catch((error) => {
       console.error(error.message );
@@ -44,12 +44,12 @@ export class IngredientProvider extends Component {
       headers:{
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
       },
-    }).then(response => {
+    }).then(response => 
       response.json()
-    }).then((expired) => {
-      this.setState({ expired });
+    ).then((expired) => {
+      this.setState({ expired })  
     }).catch((error) => {
-      console.error(error.message );
+      console.error(error.message )
     });
   };
   componentDidMount() {
@@ -100,7 +100,7 @@ export class IngredientProvider extends Component {
     };
     return (
       <IngredientContext.Provider value={value}>
-        {this.props.children};
+        {this.props.children}
       </IngredientContext.Provider>
     );
   };
