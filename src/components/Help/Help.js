@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './Help.css';
-//import  from '../';
 
 class Help extends Component {
 
