@@ -4,14 +4,15 @@
     padding-bottom: 10%;
 }
 .header a, .header a:hover, .header a:focus, .header a:active {
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: 'Playfair Display SC', serif;  
     text-decoration: none;
 
 }
-/* h1 {
-
-} */
+.nav-item{
+    font-weight: bold;
+    font-size: 20px;
+}
 .nav{
     display: flexbox;
     flex-direction: row;
@@ -28,5 +29,5 @@
 }
 .nav a, .nav a:hover, .nav a:focus, .nav a:active {
     
-    color: white;
+    color: black;
 }

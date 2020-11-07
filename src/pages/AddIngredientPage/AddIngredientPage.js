@@ -116,7 +116,6 @@ class AddIngredientPage extends Component {
     this.history = otherProps.history;
     return(
       <div className='container'>
-        <Link to='/kitchen'>Back to Kitchen</Link>
         <form onSubmit={(e) => this.submitIngredient(e)}>
           <ul className='wrapper'>
             {/* name */}
@@ -177,7 +176,7 @@ class AddIngredientPage extends Component {
             </li>
             {/*submit*/}
             <li className='form-row'>
-              <Input type="submit" name="ingredientSubmit" />
+              <Input type="submit" name="ingredientSubmit" value="Submit"/>
             </li>
           </ul>
         </form>
