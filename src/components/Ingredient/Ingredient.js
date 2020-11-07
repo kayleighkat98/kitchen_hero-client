@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Ingredient.css';
 import config from "../../config";
 import {Link} from 'react-router-dom';
 import TokenService from '../../services/token-service';
@@ -45,7 +46,7 @@ class Ingredient extends Component {
                 </div>
 
                 <div className='center'>
-                    <h4>{name}</h4>
+                    <h4 className='ingredient-name'>{name}</h4>
                     <p>{quantity} {quantityType}</p>
                     <p>Expiration Date: {expirationDate} </p>
                 </div>

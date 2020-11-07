@@ -20,11 +20,11 @@ class Header extends Component {
             Logout
           </Link>
           {' '}
-          <Link to='/add-ingredient'>Add</Link>
+          <Link to='/add-ingredient' className='nav-item'>Add</Link>
           {' '}
-          <Link to='/expired'>Expired</Link>
+          <Link to='/expired' className='nav-item'>Expired</Link>
           {' '}
-          <Link to='/epantry'>Pantry</Link>
+          <Link to='/epantry' className='nav-item'>Pantry</Link>
         </nav>
       </div>
     );
@@ -36,7 +36,7 @@ class Header extends Component {
         {' '}
         <Link to='/register' className='nav-item'>Sign up</Link>
         {' '}
-        <Link to='/about'>About</Link>
+        <Link to='/about' className='nav-item'>About</Link>
       </nav>
     );
   };

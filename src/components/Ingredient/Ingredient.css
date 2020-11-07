@@ -1,0 +1,26 @@
+.delete-button,.edit-button{
+    background-color: #A95006 ;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+    height:30px;
+    width:60px;
+}
+
+.ingredient {
+    background-color: rgb(241, 105, 60);
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-bottom: 10px;
+}
+
+.delete-button{
+    position: relative;
+    float: right;
+}
+
+.center{
+    text-align: center;
+
+}

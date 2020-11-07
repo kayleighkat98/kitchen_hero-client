@@ -10,7 +10,7 @@ class KitchenPage extends Component {
             <div className='container'>
                <ul className='kitchen-controls centerText' >
                    <li><Link to='/add-ingredient'className='kitchen-button centerText'>Add</Link></li>
-                   <li><Link to='/epantry' className='kitchen-button centerText'>View</Link></li>
+                   <li><Link to='/epantry' className='kitchen-button centerText'>Pantry</Link></li>
                    <li><Link to= '/expired' className='kitchen-button centerText'>Expired</Link></li>
                </ul>  
             </div>
