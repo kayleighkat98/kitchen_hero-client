@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, Label } from '../Form/Form';
+import { Input, Label, Required } from '../Form/Form';
 import AuthApiService from '../../services/auth-api-service';
 import UserContext from '../../contexts/UserContext';
 import Button from '../Button/Button';
@@ -46,6 +46,7 @@ class LoginForm extends Component {
         <div className="form-line">
           <Label htmlFor='login-username-input'>
             Username
+            <Required/>
           </Label>
           <Input
             ref={this.firstInput}
@@ -58,6 +59,7 @@ class LoginForm extends Component {
         <div className="form-line">
           <Label htmlFor='login-password-input'>
             Password
+            <Required/>
           </Label>
           <Input
             id='login-password-input'
