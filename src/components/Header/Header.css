@@ -3,10 +3,14 @@
     text-align: center;
     padding-bottom: 10%;
 }
-
-h1 {
+.header a, .header a:hover, .header a:focus, .header a:active {
     color: white;
+    font-family: 'Playfair Display SC', serif;  
+   
 }
+/* h1 {
+
+} */
 .nav{
     display: flexbox;
     flex-direction: row;
