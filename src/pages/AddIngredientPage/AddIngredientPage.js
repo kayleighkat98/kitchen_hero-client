@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import IngredientContext from '../../contexts/IngredientContext';
 import config from '../../config';
-import IngredientForm from "../../components/IngredientForm/IngredientForm";
+import { Input, Required, Label } from '../../components/Form/Form';
 import TokenService from '../../services/token-service';
 class AddIngredientPage extends Component {
   constructor(props) {
@@ -117,24 +117,26 @@ class AddIngredientPage extends Component {
     return(
       <div className='container'>
         <Link to='/kitchen'>Back to Kitchen</Link>
-        <IngredientForm className='add-ingredient' onSubmit={(e) => this.submitIngredient(e)}>
+        <form onSubmit={(e) => this.submitIngredient(e)}>
           <ul className='wrapper'>
             {/* name */}
             <li className='form-row'>
-              <label>
+              <Label>
                 Ingredient Name:
-                <input 
+                < Required />
+                <Input 
                   type='text' 
                   name='ingredient-name'
                   onChange={(e) => this.updateName(e.target.value)}
                 />
-              </label>
+              </Label>
             </li>
             {/* amount */}
             <li className='form-row'>
-              <label>
+              <Label>
                 Amount of item:
-                <input 
+                < Required />
+                <Input 
                   type='number' 
                   min = '1'
                   max = '100000'
@@ -142,11 +144,14 @@ class AddIngredientPage extends Component {
                   onChange={(e) => this.updateAmount(e.target.value)}
                   required                                
                 />
-              </label>
+              </Label>
             </li>
             {/* amount type */}
             <li className='form-row'>
-              <select onChange={(e) => this.updateAmountType(e.target.value)}>
+            <Label>
+                Measurment type:
+                < Required />
+                <select onChange={(e) => this.updateAmountType(e.target.value)}>
                 <option>Select Unit Type</option>
                 <option value='pounds'>Pounds</option>
                 <option value='cups'>Cups</option>
@@ -154,11 +159,13 @@ class AddIngredientPage extends Component {
                 <option value='ounces'>Ounces</option>
                 <option value='liters'>Liters</option>
               </select>
+              </Label>
+
             </li>
             {/* expiration */}
             <li className='form-row'>
-              <label >Expiration date:
-                <input 
+              <Label >Expiration date:
+                <Input 
                   type="date" 
                   id="expiration" 
                   name="expirationDate"
@@ -166,14 +173,14 @@ class AddIngredientPage extends Component {
                   max="3020-01-01"
                   onChange={(e) => this.updateExpiration(e.target.value)}
                 />   
-              </label>
+              </Label>
             </li>
             {/*submit*/}
             <li className='form-row'>
-              <input type="submit" name="ingredientSubmit" />
+              <Input type="submit" name="ingredientSubmit" />
             </li>
           </ul>
-        </IngredientForm>
+        </form>
         {this.state.isError && <p>{this.state.errorMsg}</p>}
       </div>
     );
