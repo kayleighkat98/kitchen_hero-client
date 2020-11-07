@@ -36,9 +36,9 @@ class ExpiredPage extends Component {
             );
         }else{
             return (
-                <>
+                <div>
                     <h4>None of your ingredients are expired. Hurray!</h4>
-                </>
+                </div>
             );
         }
     };

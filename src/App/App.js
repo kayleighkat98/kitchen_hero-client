@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import HomePage from '../pages/HomePage/HomePage';
 import AboutPage from '../pages/AboutPage/AboutPage';
@@ -24,7 +25,7 @@ class App extends Component {
     return (
       <div className='App'>
         <Header />
-        <main>
+        <main  id='react-root' >
           {hasError && (
             <p>There was an error! Oh no!</p>
           )}
