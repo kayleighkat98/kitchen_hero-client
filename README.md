@@ -30,6 +30,8 @@ REGULAR DEPENDENCIES:
     @testing-library/user-event
 DEV DEPENDENCIES:
     cross-env
+    enzyme
+    enzyme-adapter-react-16
 
 
 
