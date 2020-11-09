@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import IngredientContext from '../../contexts/IngredientContext';
 import config from '../../config';
@@ -26,7 +25,7 @@ class AddIngredientPage extends Component {
       redirect: null,
     };
   };
-  static contextType = IngredientContext;
+  static contextType = IngredientContext;//DEFINE CONTEXT
 
   static defaultProps = {
     viewtype: false,
@@ -34,7 +33,7 @@ class AddIngredientPage extends Component {
       params: {},
     },
   };
-  validateIngredient = () => {
+  validateIngredient = () => {//DECIDE IF INGREDIENT IS VALID
     const name = this.state.name.value;
     const amount = this.state.amount.value;
     const amountType = this.state.amountType.value;
@@ -61,11 +60,11 @@ class AddIngredientPage extends Component {
     }
     return true;
   };
-  submitIngredient = (e) => {
+  submitIngredient = (e) => {//PROCESSES ADDING AN INGREDIENT TO THE SERVER
     e.preventDefault();
     this.setState({ isError: false, errorMsg: "" });
     if (this.validateIngredient()) {
-      fetch(`${config.API_ENDPOINT}/ingredients`, {
+      fetch(`${config.API_ENDPOINT}/ingredients`, {//ACCESS SERVER
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -80,10 +79,10 @@ class AddIngredientPage extends Component {
         }),
       }).then((res) => {
         return res.json();
-      }).then((response) => {
+      }).then((response) => {//UTILIZE RESPONSE FROM SERVER
         this.context.addIngredient();
         this.setState({
-          redirect: "/epantry",
+          redirect: "/pantry",
         });
       }).then(()=>{
        window.location.reload(true);
@@ -95,23 +94,22 @@ class AddIngredientPage extends Component {
       });
     };
   };
-  updateName = (name) => {
+  updateName = (name) => {//DEFINE STATE
     this.setState({ name: { value: name } });
   };
-  updateAmount = (amount) => {
+  updateAmount = (amount) => {//DEFINE STATE
     this.setState({ amount: { value: amount } });
   };
-  updateAmountType= (amountType) => {
+  updateAmountType= (amountType) => {//DEFINE STATE
     this.setState({ amountType: { value: amountType } });
   };
-  updateExpiration= (expirationDate) => {
+  updateExpiration= (expirationDate) => {//DEFINE STATE
     this.setState({ expirationDate: { value: expirationDate } });
   };
   render() {
     if (this.state.redirect) {
         return <Redirect to={this.state.redirect} />;
       }
-    const { ingredients = [] } = this.context;
     const { className, ...otherProps } = this.props;
     this.history = otherProps.history;
     return(

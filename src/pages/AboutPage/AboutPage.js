@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './AboutPage.css';
 import GetStarted from '../../components/GetStarted/GetStarted';
 
-class AboutPage extends Component {
+class AboutPage extends Component {//LEARN MORE ABOUT THE WEBSITE
     render() {
         return(
             <div className='container'>

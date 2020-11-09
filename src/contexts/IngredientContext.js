@@ -26,7 +26,7 @@ export class IngredientProvider extends Component {
       clearError: () => {},
     };
   };
-  fetchIngredients = () => {
+  fetchIngredients = () => {// FETCHES ALL INGREDIENTS AND SETS STATE
     fetch(`${config.API_ENDPOINT}/ingredients`,{
       headers:{
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
@@ -39,7 +39,7 @@ export class IngredientProvider extends Component {
       console.error(error.message );
     });
   };
-  fetchExpired = () => {
+  fetchExpired = () => {// FETCHES ALL EXPIRED AND SETS STATE
     fetch(`${config.API_ENDPOINT}/ingredients/expired`,{
       headers:{
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
@@ -52,7 +52,7 @@ export class IngredientProvider extends Component {
       console.error(error.message )
     });
   };
-  componentDidMount() {
+  componentDidMount() {// PREVENTS FETCHES UNTIL AN AUTH TOKEN IS PRESENT
     TokenService.hasAuthToken()
       ? this.fetchIngredients()
       : console.log('please log in')
@@ -60,7 +60,7 @@ export class IngredientProvider extends Component {
       ? this.fetchExpired()
       : console.log('Demo credentials are listed in log in place holders')
   };
-  componentWillUnmount() {
+  componentWillUnmount() {//SETS TIMEOUT SIGNOUT WHEN USER IS INACTIVE
     IdleService.unRegisterIdleResets();
     TokenService.clearCallbackBeforeExpiry();
   };
@@ -71,12 +71,12 @@ export class IngredientProvider extends Component {
   clearError = () => {
     this.setState({ error: null });
   };
-  handleDeleteingredient = (ingredient_id) => {
+  handleDeleteingredient = (ingredient_id) => {//CLEARS DELETED INGREDIENT FROM STATE
     this.setState({
       ingredients: this.state.ingredients.filter((ingredient) => ingredient.ingredient_id !== ingredient_id),
     });
   };
-  handleAddIngredient = () => {
+  handleAddIngredient = () => {// POSTS NEW INGREDIENT TO USERS PANTRY ON OUR DATABASE
       fetch(`${config.API_ENDPOINT}/ingredients`,{
         headers:{
           'authorization': `Bearer ${TokenService.getAuthToken()}`,

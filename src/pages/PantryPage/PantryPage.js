@@ -1,32 +1,25 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
-import './ePantryPage.css';
+import './PantryPage.css';
 import IngredientContext from '../../contexts/IngredientContext';
 import Ingredient from "../../components/Ingredient/Ingredient";
-import Button from '../../components/Button/Button';
-
-
-class ePantryPage extends Component {
+class PantryPage extends Component {
     static defaultProps = {
         match: {
           params: {}
         }
       };
-    static contextType = IngredientContext;
-
-    handleDeleteIngredient = ingredient_id => {
-        this.props.history.push(`/epantry`)
+    static contextType = IngredientContext;//DEFINE CONTEXT
+    handleDeleteIngredient = ingredient_id => {//HANDLE PAGE HISTORY ON DELETE
+        this.props.history.push(`/pantry`)
     };
-    handleIngredientRender = () => {
+    handleIngredientRender = () => {//IF USER HAS INGREDIENTS, SHOW THEM
         if (this.context.ingredients && this.context.ingredients.length > 0){
             const { ingredients=[] } = this.context;
             return(
-                <div className='epantry-page'>
-
-                    <ul className='epantry-list'>
+                <div className='pantry-page'>
+                    <ul className='pantry-list'>
                         {ingredients.map(ingredient =>
                             <li className='ingredient' key= {ingredient.ingredient_id}>
-        
                                 <Ingredient
                                     ingredient_id={ingredient.ingredient_id} 
                                     name = {ingredient.name}
@@ -46,8 +39,7 @@ class ePantryPage extends Component {
                     No ingredients to show, begin by adding a few!
                 </>
             );
-        }
-        
+        };
     };
     render() {
         return(
@@ -58,4 +50,4 @@ class ePantryPage extends Component {
     };
 };
 
-export default ePantryPage;
+export default PantryPage;

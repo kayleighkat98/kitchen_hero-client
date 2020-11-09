@@ -7,8 +7,7 @@ import KitchenPage from '../pages/KitchenPage/KitchenPage';
 import RegistrationPage from '../pages/RegistrationPage/RegistrationPage';
 import SignInPage from '../pages/SignInPage/SignInPage';
 import AddIngredientPage from '../pages/AddIngredientPage/AddIngredientPage';
-import ePantryPage from '../pages/ePantryPage/ePantryPage';
-import EditIngredientPage from '../pages/EditIngredientPage/EditIngredientPage';
+import PantryPage from '../pages/PantryPage/PantryPage';
 import ExpiredPage from '../pages/ExpiredPage/ExpiredPage';
 import PrivateRoute from '../utils/PrivateRoute';
 import PublicOnlyRoute from '../utils/PublicOnlyRoute';
@@ -22,7 +21,7 @@ class App extends Component {
   }
   render() {
     const { hasError } = this.state
-    return (
+    return (//SWITCH BOARD FOR REACT ROUTES
       <div className='App'>
         <Header />
         <main  id='react-root' >
@@ -51,8 +50,8 @@ class App extends Component {
               component = {KitchenPage}
             />
             <PrivateRoute
-              path = '/epantry'
-              component = {ePantryPage}
+              path = '/pantry'
+              component = {PantryPage}
             />
             <PrivateRoute
               path = '/expired'
@@ -61,10 +60,6 @@ class App extends Component {
             <PrivateRoute
               path = '/add-ingredient'
               component = {AddIngredientPage}
-            />
-            <PrivateRoute
-              path = '/edit-ingredient/:ingredient_id'
-              component = {EditIngredientPage}
             />
             <Route
               component={NotFoundPage}

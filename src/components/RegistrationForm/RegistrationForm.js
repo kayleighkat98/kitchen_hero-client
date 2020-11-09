@@ -12,16 +12,16 @@ class RegistrationForm extends Component {
   
   state = { error: null };
 
-  firstInput = React.createRef();
+  firstInput = React.createRef();//ALLOWS TO FOCUS ON INPUT
 
   handleSubmit = ev => {
     ev.preventDefault()
     const { name, username, password } = ev.target
-    AuthApiService.postUser({
+    AuthApiService.postUser({//POSTS NEW USER INFO TO DATABASE
       name: name.value,
       username: username.value,
       password: password.value,
-    }).then(user => {
+    }).then(user => {//CLEARS INPUTS AND REDIRECTS PAGE
         name.value = ''
         username.value = ''
         password.value = ''
@@ -33,7 +33,7 @@ class RegistrationForm extends Component {
   };
 
   componentDidMount() {
-    this.firstInput.current.focus()
+    this.firstInput.current.focus()// FOCUS ON INPUT
   };
 
   render() {

@@ -9,29 +9,29 @@ class LoginForm extends Component {
   static defaultProps = {
     onLoginSuccess: () => { }
   };
-  static contextType = UserContext;
+  static contextType = UserContext;//DEFINES OUR CONTEXT
   state = { error: null };
-  firstInput = React.createRef();
-  handleSubmit = ev => {
+  firstInput = React.createRef();//USED TO FOCUS ON INPUT FIELD
+  handleSubmit = ev => {//PROCESSES LOGGING IN
     ev.preventDefault();
     const { username, password } = ev.target;
     this.setState({ error: null });
-    AuthApiService.postLogin({
+    AuthApiService.postLogin({//POST FETCH WITH INPUT VALUEES
       username: username.value,
       password: password.value,
-    }).then(res => {
+    }).then(res => {//SETS BEARER TOKEN
       username.value = ''
       password.value = ''
       this.context.processLogin(res.authToken)
       this.props.onLoginSuccess()
     }).then(()=>{
-      window.location.reload(true);
+      window.location.reload(true);//REFRESH PAGE
     }).catch(res => {
       this.setState({ error: res.error })
     });
   };
   componentDidMount() {
-    this.firstInput.current.focus();
+    this.firstInput.current.focus();//FOCUS ON INPUT
   };
   render() {
     const { error } = this.state;

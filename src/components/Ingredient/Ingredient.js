@@ -1,37 +1,34 @@
 import React, { Component } from 'react';
 import './Ingredient.css';
 import config from "../../config";
-import {Link} from 'react-router-dom';
 import TokenService from '../../services/token-service';
 import IngredientContext from '../../contexts/IngredientContext';
 class Ingredient extends Component {
     static defaultProps ={
-        onDeleteIngredient: () => {},
         ingredient_id: () => {},
     };
     static contextType = IngredientContext;
-    handleClickDelete = e => {
+    handleClickDelete = e => {//PROCESSES THE DELETION OF AN INGREDIENT
         e.preventDefault();
-        const ingredient_id = this.props.ingredient_id;
-        fetch(`${config.API_ENDPOINT}/ingredients/${ingredient_id}`, {
+        const ingredient_id = this.props.ingredient_id;//DEFINE INGREDIENT TO DELETE
+        fetch(`${config.API_ENDPOINT}/ingredients/${ingredient_id}`, {//CALL DELETE FETCH
           method: 'DELETE',
           headers: {
             'content-type': 'application/json',
-            'authorization': `Bearer ${TokenService.getAuthToken()}`,
+            'authorization': `Bearer ${TokenService.getAuthToken()}`,//PROVIDE AUTHORIZATION
           },
         }).then(res => {
             return res.json();
         }).then(() => {
-            this.context.deleteIngredient(ingredient_id);
-            this.props.onDeleteIngredient(ingredient_id);
+            this.context.deleteIngredient(ingredient_id);//UPDATE CONTEXT VALUES
         }).then(()=>{
-            window.location.reload(true);
+            window.location.reload(true);//REFRESH PAGE
         }).catch(error => {
             console.error({ error });
         });
     };
     render() {
-        const {ingredient_id, name, quantity, quantityType, expirationDate} = this.props;
+        const {name, quantity, quantityType, expirationDate} = this.props;
         return(
             <div className='ingredient-container'>
                 <div className='head'>

@@ -9,7 +9,7 @@ class Header extends Component {
   handleLogoutClick = () => {
     this.context.processLogout();
   }
-  renderLogoutLink() {
+  renderLogoutLink() {//DEFINES NAV BAR W/ LOGOUT LINK 
     return (
       <div>
         <nav>
@@ -28,12 +28,12 @@ class Header extends Component {
           {' '}
           <Link to='/expired' className='nav-item'>Expired</Link>
           {' '}
-          <Link to='/epantry' className='nav-item'>Pantry</Link>
+          <Link to='/pantry' className='nav-item'>Pantry</Link>
         </nav>
       </div>
     );
   };
-  renderLoginLink() {
+  renderLoginLink() {//DEFINES NAV BAR W/ LOGIN LINK
     return (
       <nav>
         <Link to='/login' className='nav-item'>Login</Link>
