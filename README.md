@@ -3,17 +3,17 @@
 * VERCEL URL:    https://kitchen-hero.kayleighkat98.vercel.app/
 * HEROKU URL:    https://fierce-hollows-91839.herokuapp.com/ 
 ## Documentation for the API.
-ROUTES:(for each path, add to the end of the api url)
-    login {POST}
-        '/api/auth'
-    user {POST}
-        '/api/user'
-    all ingredients {GET, POST}
-        '/api/ingredients'
-    all expired {GET} 
-        '/api/ingredients/expired'
-    one ingredient {GET, DELETE}
-        '/api/ingredients/:id'
+### ROUTES:
+* login {POST}
+    * '/api/auth'
+* user {POST}
+    * '/api/user'
+* all ingredients {GET, POST}
+    * '/api/ingredients'
+* all expired {GET} 
+    * '/api/ingredients/expired'
+* one ingredient {GET, DELETE}
+    * '/api/ingredients/:id'
 ## Screenshot(s)
 ![home](images/screenshots/home.png)
 ![about](images/screenshots/about.png)
