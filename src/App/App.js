@@ -21,7 +21,8 @@ class App extends Component {
   }
   render() {
     const { hasError } = this.state
-    return (//SWITCH BOARD FOR REACT ROUTES
+    //SWITCH BOARD FOR REACT ROUTES
+    return (
       <div className='App'>
         <Header />
         <main  id='react-root' >

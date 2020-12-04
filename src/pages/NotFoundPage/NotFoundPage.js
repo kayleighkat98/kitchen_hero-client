@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 class NotFoundRoute extends Component {
   render() {
     return (
@@ -10,5 +9,4 @@ class NotFoundRoute extends Component {
     );
   };
 };
-
 export default NotFoundRoute;

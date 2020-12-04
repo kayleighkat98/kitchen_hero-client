@@ -8,7 +8,8 @@ class Ingredient extends Component {
         ingredient_id: () => {},
     };
     static contextType = IngredientContext;
-    handleClickDelete = e => {//PROCESSES THE DELETION OF AN INGREDIENT
+    //PROCESSES THE DELETION OF AN INGREDIENT
+    handleClickDelete = e => {
         e.preventDefault();
         const ingredient_id = this.props.ingredient_id;//DEFINE INGREDIENT TO DELETE
         fetch(`${config.API_ENDPOINT}/ingredients/${ingredient_id}`, {//CALL DELETE FETCH

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './ExpiredPage.css';
 import IngredientContext from '../../contexts/IngredientContext';
 
 import Ingredient from '../../components/Ingredient/Ingredient';

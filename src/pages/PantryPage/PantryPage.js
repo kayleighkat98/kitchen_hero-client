@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './PantryPage.css';
 import IngredientContext from '../../contexts/IngredientContext';
 import Ingredient from "../../components/Ingredient/Ingredient";
 class PantryPage extends Component {

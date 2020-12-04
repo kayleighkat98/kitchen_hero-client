@@ -1,4 +1,4 @@
-import PantryPage from './PantryPage.js.js';
+import PantryPage from './PantryPage.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
