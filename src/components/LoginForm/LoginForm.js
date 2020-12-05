@@ -15,7 +15,7 @@ class LoginForm extends Component {
     ev.preventDefault();
     const { username, password } = ev.target;
     this.setState({ error: null });
-    AuthApiService.postLogin({//POST FETCH WITH INPUT VALUEES
+    AuthApiService.postLogin({//POST FETCH WITH INPUT VALUES
       username: username.value,
       password: password.value,
     }).then(res => {//SETS BEARER TOKEN
