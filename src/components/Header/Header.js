@@ -39,7 +39,7 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <h1 className="header center">
+        <h1>
           {TokenService.hasAuthToken()
             ? <Link to='/kitchen'>Kitchen-Hero</Link>
             : <Link to='/'>Kitchen-Hero</Link>

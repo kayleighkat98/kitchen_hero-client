@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './AboutPage.css';
+import '../../styles/dist/About.css';
 import GetStarted from '../../components/GetStarted/GetStarted';
 
 class AboutPage extends Component {//LEARN MORE ABOUT THE WEBSITE

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Ingredient.css';
+import '../../styles/dist/Ingredient.css';
 import config from "../../config";
 import TokenService from '../../services/token-service';
 import IngredientContext from '../../contexts/IngredientContext';
@@ -31,7 +31,7 @@ class Ingredient extends Component {
     render() {
         const {name, quantity, quantityType, expirationDate} = this.props;
         return(
-            <div className='ingredient-container'>
+            <div>
                 <div className='head'>
                     <button className='edit-button'>{name}</button>
                     <button 

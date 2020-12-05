@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-
-import './HomePage.css';
+import '../../styles/dist/Home.css';
 import GetStarted from '../../components/GetStarted/GetStarted';
 class HomePage extends Component {
     render() {
