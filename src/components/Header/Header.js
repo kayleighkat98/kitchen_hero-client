@@ -6,59 +6,49 @@ import UserContext from '../../contexts/UserContext';
 
 class Header extends Component {
   static contextType = UserContext;
-  handleLogoutClick = () => {
-    this.context.processLogout();
-  }
-  //DEFINES NAV BAR W/ LOGOUT LINK
+  //nav when logged in
   renderLogoutLink() { 
     return (
-      <div>
-        <nav>
-          <Link
-            className='nav-item'
-            onClick={this.handleLogoutClick}
-            to='/login'>
-            Logout
-          </Link>
-          {' '}
-          <Link to='/about' className='nav-item'>About</Link>
-          {' '}
-          <Link to='/kitchen' className='nav-item'>Kitchen</Link>
-          {' '}
-          <Link to='/add-ingredient' className='nav-item'>Add</Link>
-          {' '}
-          <Link to='/expired' className='nav-item'>Expired</Link>
-          {' '}
-          <Link to='/pantry' className='nav-item'>Pantry</Link>
-        </nav>
-      </div>
+      <nav>
+        <Link to='/login' className='link' onClick={()=>this.context.processLogout()}>Logout</Link>
+        {' '}
+        <Link to='/about' className='link'>About</Link>
+        {' '}
+        <Link to='/kitchen' className='link'>Kitchen</Link>
+        {' '}
+        <Link to='/add-ingredient' className='link'>Add</Link>
+        {' '}
+        <Link to='/expired' className='link'>Expired</Link>
+        {' '}
+        <Link to='/pantry' className='link'>Pantry</Link>
+      </nav>
     );
   };
-  //DEFINES NAV BAR W/ LOGIN LINK
+  //nav when logged out 
   renderLoginLink() {
     return (
       <nav>
-        <Link to='/login' className='nav-item'>Login</Link>
+        <Link to='/login' className='link'>Login</Link>
         {' '}
-        <Link to='/register' className='nav-item'>Sign up</Link>
+        <Link to='/register' className='link'>Sign up</Link>
         {' '}
-        <Link to='/about' className='nav-item'>About</Link>
+        <Link to='/about' className='link'>About</Link>
       </nav>
     );
   };
   render() {
     return (
-      <header className="header-container">
+      <header>
         <h1 className="header center">
-        {TokenService.hasAuthToken()
-          ? <Link to='/kitchen'>Kitchen-Hero</Link>
-          : <Link to='/'>Kitchen-Hero</Link>}
-        </h1>
-        <div className='nav'>
           {TokenService.hasAuthToken()
-            ? this.renderLogoutLink()
-            : this.renderLoginLink()}
-        </div>
+            ? <Link to='/kitchen'>Kitchen-Hero</Link>
+            : <Link to='/'>Kitchen-Hero</Link>
+          }
+        </h1>
+        {TokenService.hasAuthToken()
+          ? this.renderLogoutLink()
+          : this.renderLoginLink()
+        }
       </header>
     )
   };

@@ -3,6 +3,12 @@
   overflow: auto;
 }
 
+#react-root {
+  height: 120vh;
+  overflow: auto;
+  pointer-events: none;
+}
+
 #react-root > * {
   -webkit-box-shadow: 5px 10px #000000;
           box-shadow: 5px 10px #000000;
@@ -11,12 +17,6 @@
   margin: 1rem;
   padding: 1rem;
   pointer-events: auto;
-}
-
-#react-root {
-  height: 120vh;
-  overflow: auto;
-  pointer-events: none;
 }
 
 .form-row {

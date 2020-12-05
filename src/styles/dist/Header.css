@@ -1,21 +1,10 @@
-.centerText {
-  padding-top: 10%;
-  text-align: center;
-  padding-bottom: 10%;
-}
-
-.header a, .header a:hover, .header a:focus, .header a:active {
+header h1 a, header h1 a:hover, header h1 a:focus, header h1 a:active {
   color: black;
   font-family: 'Playfair Display SC', serif;
   text-decoration: none;
 }
 
-.nav-item {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.nav {
+header nav {
   display: flexbox;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -24,17 +13,12 @@
   text-align: center;
 }
 
-.nav ul {
-  border: 1px solid #d41414;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+header nav a, header nav a:hover, header nav a:focus, header nav a:active {
+  color: black;
 }
 
-.nav a, .nav a:hover, .nav a:focus, .nav a:active {
-  color: black;
+header nav .link {
+  font-weight: bold;
+  font-size: 20px;
 }
 /*# sourceMappingURL=Header.css.map */
