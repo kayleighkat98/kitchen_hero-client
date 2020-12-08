@@ -146,7 +146,7 @@ class AddIngredientPage extends Component {
             {/* amount type */}
             <li className='form-row'>
             <Label>
-                Measurment type:
+                Measurement type:
                 < Required />
                 <select onChange={(e) => this.updateAmountType(e.target.value)}>
                 <option>Select Unit Type</option>
