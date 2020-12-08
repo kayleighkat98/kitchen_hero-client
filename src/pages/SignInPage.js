@@ -7,7 +7,7 @@ class SignInPage extends Component {
       push: () => { },
     },
   };
-  handleLoginSuccess = () => {//REDIRECTS PAGE UPON SUCCESSFULL LOGIN
+  handleLoginSuccess = () => {//REDIRECTS PAGE UPON SUCCESSFUL LOGIN
     const { location, history } = this.props;
     const destination = (location.state || {}).from || '/kitchen';//DEFINE WHAT PAGE TO RENDER UPON LOGIN
     history.push(destination);//REDIRECT PAGE

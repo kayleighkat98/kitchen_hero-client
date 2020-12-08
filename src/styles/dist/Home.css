@@ -1,4 +1,37 @@
-.home-controls a, .home-controls a:hover, .home-controls a:focus, .home-controls a:active {
+.App {
+  max-height: calc(100% - 4rem);
+  overflow: auto;
+}
+
+#react-root {
+  height: 120vh;
+  overflow: auto;
+  pointer-events: none;
+}
+
+#react-root > * {
+  -webkit-box-shadow: 5px 10px #000000;
+          box-shadow: 5px 10px #000000;
+  background-color: #b3b3b3;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  pointer-events: auto;
+}
+
+.form-row {
+  list-style-type: none;
+}
+
+.home-container div {
+  text-align: center;
+}
+
+.home-container div a, .home-container div a:focus, .home-container div a:active {
   color: black;
+}
+
+.home-container div a:hover {
+  color: blue;
 }
 /*# sourceMappingURL=Home.css.map */

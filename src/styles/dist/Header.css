@@ -27,8 +27,15 @@ header h1 {
   text-align: center;
 }
 
-header h1 a, header h1 a:hover, header h1 a:focus, header h1 a:active {
+header h1 a, header h1 a:focus, header h1 a:active {
   color: black;
+}
+
+header h1 a:hover {
+  color: blue;
+}
+
+header h1 a, header h1 a:hover, header h1 a:focus, header h1 a:active {
   font-family: 'Playfair Display SC', serif;
   text-decoration: none;
 }
@@ -42,8 +49,12 @@ header nav {
   text-align: center;
 }
 
-header nav a, header nav a:hover, header nav a:focus, header nav a:active {
+header nav a, header nav a:focus, header nav a:active {
   color: black;
+}
+
+header nav a:hover {
+  color: blue;
 }
 
 header nav .link {

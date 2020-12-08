@@ -43,7 +43,7 @@ class Ingredient extends Component {
                     </button>
                 </div>
 
-                <div className='center'>
+                <div className='content'>
                     <h4 className='ingredient-name'>{name}</h4>
                     <p>{quantity} {quantityType}</p>
                     <p>Expiration Date: {expirationDate} </p>

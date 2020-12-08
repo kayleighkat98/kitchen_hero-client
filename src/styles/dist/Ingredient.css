@@ -1,3 +1,28 @@
+.App {
+  max-height: calc(100% - 4rem);
+  overflow: auto;
+}
+
+#react-root {
+  height: 120vh;
+  overflow: auto;
+  pointer-events: none;
+}
+
+#react-root > * {
+  -webkit-box-shadow: 5px 10px #000000;
+          box-shadow: 5px 10px #000000;
+  background-color: #b3b3b3;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  pointer-events: auto;
+}
+
+.form-row {
+  list-style-type: none;
+}
+
 .ingredient {
   background-color: #f1693c;
   display: -webkit-box;
@@ -11,17 +36,22 @@
   margin-right: 2.6rem;
 }
 
-.ingredient .delete-button {
-  position: relative;
-  float: right;
-}
-
-.ingredient .delete-button, .ingredient .edit-button {
+.ingredient .head button {
   -webkit-box-shadow: 0px 0px 0px transparent;
           box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
   text-shadow: 0px 0px 0px transparent;
   height: 30px;
   width: 60px;
+}
+
+.ingredient .head .delete-button {
+  position: relative;
+  float: right;
+}
+
+.ingredient .content {
+  text-align: center;
+  padding-bottom: 1vh;
 }
 /*# sourceMappingURL=Ingredient.css.map */

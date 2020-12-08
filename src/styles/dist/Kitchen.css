@@ -52,8 +52,15 @@
   margin-left: 10%;
 }
 
+.kitchen-controls li a, .kitchen-controls li a:focus, .kitchen-controls li a:active {
+  color: black;
+}
+
+.kitchen-controls li a:hover {
+  color: blue;
+}
+
 .kitchen-controls li a, .kitchen-controls li a:hover, .kitchen-controls li a:focus, .kitchen-controls li a:active {
   text-decoration: none;
-  color: black;
 }
 /*# sourceMappingURL=Kitchen.css.map */

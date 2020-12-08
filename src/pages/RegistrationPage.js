@@ -6,7 +6,7 @@ class RegistrationPage extends Component {
           push: () => {},
         },
     };
-    handleRegistrationSuccess = () => {//REDIRECT TO LOGIN UPON SUCCESSFULL REGISTRATION
+    handleRegistrationSuccess = () => {//REDIRECT TO LOGIN UPON SUCCESSFUL REGISTRATION
     const { history } = this.props;
     history.push('/login')
     };

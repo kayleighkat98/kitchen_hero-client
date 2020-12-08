@@ -2,16 +2,15 @@
 header
     h1
         @include center()
+        @include basicLink()
         a, a:hover, a:focus, a:active
-            color: rgb(0, 0, 0)
             font-family: 'Playfair Display SC', serif  
             text-decoration: none
     nav
         display: flexbox
         flex-direction: row
         text-align: center
-        a, a:hover, a:focus, a:active
-            color: black
+        @include basicLink()
         .link
             font-weight: bold
             font-size: 20px

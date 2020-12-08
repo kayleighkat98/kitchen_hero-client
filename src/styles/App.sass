@@ -4,7 +4,11 @@
     padding-bottom: 10%
 @mixin center ()
     text-align: center
-
+@mixin basicLink ()
+    a, a:focus, a:active
+        color: black
+    a:hover
+        color: blue
 .App 
     max-height: calc(100% - 4rem)
     overflow: auto
